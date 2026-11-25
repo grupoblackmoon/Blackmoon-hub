@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-adsense-account" content="ca-pub-5975800190636200">
-<title> 🌓BLACKMOON GROUP🌗 </title>
+<title>🌓 BLACKMOON GROUP — Multiverso Creativo</title>
 
 <!-- GOOGLE ADSENSE (Carga Principal) -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5975800190636200"
@@ -15,701 +15,684 @@ crossorigin="anonymous"></script>
         src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
 </script>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+:root {
+  --bg-void: #07070b;
+  --bg-elevated: rgba(20, 21, 29, 0.68);
+  --bg-card: rgba(255, 255, 255, 0.045);
+  --bg-card-hover: rgba(180, 109, 225, 0.12);
+  --border-subtle: rgba(255, 255, 255, 0.11);
+  --border-accent: rgba(180, 109, 225, 0.45);
+  --text-main: #f5f6fa;
+  --text-muted: rgba(245, 246, 250, 0.62);
+  --accent-moon: #c084fc;
+  --accent-gold: #f5be27;
 }
 
-body{
-font-family:'Montserrat',sans-serif;
-background:#0d0d0d;
-color:#ffffff;
-text-align:center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.main-wrapper{
-max-width:900px;
-margin:auto;
-padding:60px 20px 120px 20px;
-}
-
-/* TITULO */
-h1{
-font-size:3rem;
-letter-spacing:8px;
-margin-bottom:15px;
-}
-
-.subtitle{
-font-size:1rem;
-opacity:0.7;
-margin-bottom:40px;
-}
-
-/* LISTA GENERAL */
-.main-list{
-list-style:none;
-display:flex;
-flex-direction:column;
-gap:40px;
-}
-
-/* AUDIO */
-.bm-audio-wrapper{
-display:flex;
-justify-content:center;
-}
-
-.bm-audio-wrapper audio{
-width:100%;
-max-width:520px;
-padding:14px;
-border-radius:20px;
-background:rgba(20,20,28,0.75);
-box-shadow:0 0 25px rgba(180,109,225,0.35);
-}
-
-/* CONTADOR */
-.bm-counter-box{
-padding:20px;
-border-radius:15px;
-background:rgba(255,255,255,0.05);
-text-align:center;
-}
-
-.bm-counter-number{
-font-size:2rem;
-margin-top:10px;
-letter-spacing:4px;
-}
-
-/* NAV */
-.nav{
-list-style:none;
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-.nav li a{
-text-decoration:none;
-color:#fff;
-border:1px solid rgba(255,255,255,0.2);
-padding:15px;
-display:block;
-transition:0.3s;
-}
-
-.nav li a:hover{
-background:#fff;
-color:#000;
-}
-
-/* FOOTER */
-.footer{
-margin-top:60px;
-font-size:0.8rem;
-opacity:0.5;
-list-style:none;
-}
-
-/* ===== BOTON WHATSAPP PROFESIONAL ===== */
-.whatsapp-btn{ 
-position:fixed;
-left:20px;
-bottom:20px;
-width:60px;
-height:60px;
-border-radius:50%;
-background:#25D366;
-display:flex;
-justify-content:center;
-align-items:center;
-box-shadow:0 8px 25px rgba(0,0,0,0.4);
-z-index:999;
-transition:all 0.3s ease;
-overflow:hidden;
-}
-
-.whatsapp-btn img{
-width:100%;
-height:100%;
-object-fit:cover;
-border-radius:50%;
-}
-
-.whatsapp-btn:hover{
-transform:scale(1.1);
-box-shadow:0 12px 35px rgba(0,0,0,0.6);
-}
-
-/* ===== ISIS MOON ===== */
-#isis-container {
-position: fixed;
-bottom: 20px;
-right: 20px;
-z-index: 9999;
-font-family: Arial, sans-serif;
-animation: floatMoon 3s ease-in-out infinite;
-}
-
-@keyframes floatMoon {
-0% { transform: translateY(0px); }
-50% { transform: translateY(-10px); }
-100% { transform: translateY(0px); }
-}
-
-#isis-avatar {
-width: 120px;
-cursor: pointer;
-display: block;
-transition: transform 0.1s ease-out;
-transform-origin: center center;
-}
-
-#isis-chat {
-display: none;
-background: #111;
-color: white;
-width: 260px;
-padding: 15px;
-border-radius: 15px;
-box-shadow: 0 0 20px rgba(128,0,255,0.5);
-margin-bottom: 10px;
-}
-
-#isis-messages {
-max-height: 120px;
-overflow-y: auto;
-font-size: 13px;
-margin-bottom: 10px;
-}
-
-#isis-input {
-width: 100%;
-padding: 5px;
-border-radius: 8px;
-border: none;
-}
-
-.isis-msg {
-margin-bottom: 6px;
-}
-
-.isis-user {
-color: #b366ff;
-}
-
-/* ===== BLACK MOON NEWS TICKER STYLES ===== */
-.bm-news-ticker {
-background: #0b0b0e;
-border-top: 1px solid rgba(255,255,255,.1);
-border-bottom: 1px solid rgba(255,255,255,.1);
-overflow: hidden;
-padding: 18px 0;
-margin-bottom: 40px;
-}
-
-.ticker-track {
-display: flex;
-gap: 20px;
-width: max-content;
-animation: scrollLeft 40s linear infinite;
-}
-
-.bm-news-ticker:hover .ticker-track {
-animation-play-state: paused;
-}
-
-@keyframes scrollLeft {
-0% { transform: translateX(0); }
-100% { transform: translateX(-50%); }
-}
-
-.ticker-item {
-display: flex;
-align-items: center;
-gap: 12px;
-background: rgba(255,255,255,0.06);
-backdrop-filter: blur(10px);
-border-radius: 14px;
-padding: 10px 14px;
-min-width: 280px;
-box-shadow: 0 0 18px rgba(0,0,0,.6);
-flex-shrink: 0;
-transition: transform 0.3s;
-}
-
-.ticker-item:hover {
-transform: scale(1.05);
-}
-
-.ticker-item img {
-width: 60px;
-height: 60px;
-object-fit: cover;
-border-radius: 10px;
-flex-shrink: 0;
-}
-
-.ticker-text {
-font-size: 0.85rem;
-text-align: left;
-}
-
-.ticker-text strong {
-color: #b46de1;
-display: block;
-font-size: 0.95rem;
-}
-
-.ticker-text span {
-color: #aaa;
-font-size: 0.7rem;
-}
-
-.ticker-item a {
-text-decoration: none;
-color: #fff;
-}
-
-/* ===== SECCIÓN DE COMENTARIOS ===== */
-.comments-section {
-background: rgba(255, 255, 255, 0.04);
-border: 1px solid rgba(255, 255, 255, 0.1);
-border-radius: 20px;
-padding: 25px;
-text-align: left;
-margin-top: 40px;
-backdrop-filter: blur(10px);
-box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
-}
-
-.comments-section h2 {
-font-size: 1.5rem;
-letter-spacing: 2px;
-margin-bottom: 20px;
-text-align: center;
-color: #b46de1;
-}
-
-.comment-form {
-display: flex;
-flex-direction: column;
-gap: 12px;
-margin-bottom: 30px;
-}
-
-.comment-form input,
-.comment-form textarea {
-width: 100%;
-background: rgba(0, 0, 0, 0.5);
-border: 1px solid rgba(180, 109, 225, 0.4);
-border-radius: 10px;
-padding: 12px;
-color: #fff;
-font-family: inherit;
-font-size: 0.9rem;
-outline: none;
-transition: 0.3s;
-}
-
-.comment-form input:focus,
-.comment-form textarea:focus {
-border-color: #b46de1;
-box-shadow: 0 0 10px rgba(180, 109, 225, 0.5);
-}
-
-.bm-btn {
-align-self: flex-start;
-background: linear-gradient(135deg, #7d3c98, #b46de1);
-color: #fff;
-border: none;
-padding: 10px 22px;
-border-radius: 20px;
-font-weight: 600;
-cursor: pointer;
-transition: 0.3s;
-box-shadow: 0 0 12px rgba(180, 109, 225, 0.3);
-}
-
-.bm-btn:hover {
-transform: scale(1.05);
-box-shadow: 0 0 18px rgba(180, 109, 225, 0.6);
-}
-
-.comment-card {
-background: rgba(0, 0, 0, 0.4);
-border: 1px solid rgba(255, 255, 255, 0.08);
-border-radius: 12px;
-padding: 16px;
-margin-top: 15px;
-}
-
-.comment-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-bottom: 8px;
-}
-
-.comment-author {
-color: #F5BE27;
-font-weight: 600;
-font-size: 0.95rem;
-}
-
-.comment-text {
-color: #e0e0e0;
-font-size: 0.9rem;
-margin: 8px 0 12px;
-word-break: break-word;
-line-height: 1.4;
-}
-
-.comment-actions {
-display: flex;
-gap: 10px;
-align-items: center;
-flex-wrap: wrap;
-}
-
-.action-btn {
-background: rgba(255, 255, 255, 0.08);
-border: 1px solid rgba(255, 255, 255, 0.15);
-color: #fff;
-padding: 5px 12px;
-border-radius: 15px;
-font-size: 0.8rem;
-cursor: pointer;
-transition: 0.25s;
-display: flex;
-align-items: center;
-gap: 5px;
-}
-
-.action-btn:hover {
-background: rgba(180, 109, 225, 0.3);
-border-color: #b46de1;
-}
-
-.replies-container {
-margin-left: 20px;
-border-left: 2px solid rgba(180, 109, 225, 0.3);
-padding-left: 12px;
-}
-
-.reply-form {
-display: none;
-margin-top: 12px;
-padding: 12px;
-background: rgba(0, 0, 0, 0.5);
-border-radius: 10px;
-border: 1px solid rgba(180, 109, 225, 0.3);
-}
-
-/* ===== CUADRO DE ANUNCIOS ADSENSE ===== */
-.ad-container-bottom {
-max-width: 900px;
-margin: 40px auto 20px auto;
-padding: 0 20px;
-text-align: center;
-}
-
-@media(max-width:600px){
-h1{
-font-size:2rem;
-letter-spacing:5px;
-}
-.replies-container {
-margin-left: 10px;
-padding-left: 8px;
-}
-}
-
-@media (max-width: 768px) {
-.ticker-item {
-min-width: 240px;
-padding: 8px 12px;
-gap: 10px;
-}
-.ticker-item img {
-width: 50px;
-height: 50px;
-}
-.ticker-text {
-font-size: 0.8rem;
-}
-.ticker-text strong {
-font-size: 0.9rem;
-}
-.ticker-text span {
-font-size: 0.65rem;
-}
-}
-
-/* Diseño minimalista de la página principal */
 html {
-background: #101116;
+  background: var(--bg-void);
+  scroll-behavior: smooth;
 }
 
 body {
-isolation: isolate;
-position: relative;
-background: transparent;
-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-line-height: 1.5;
+  isolation: isolate;
+  position: relative;
+  min-height: 100vh;
+  background: transparent;
+  color: var(--text-main);
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.55;
+  overflow-x: hidden;
 }
 
 body::before {
-content: "";
-position: fixed;
-inset: 0;
-z-index: -1;
-background:
-radial-gradient(ellipse at 50% 0%, rgba(125, 135, 170, 0.16), transparent 48%),
-linear-gradient(rgba(12, 13, 18, 0.76), rgba(12, 13, 18, 0.88)),
-url("FONDO.jpg") center / cover no-repeat;
-transition: opacity 0.3s ease;
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 50% -10%, rgba(147, 51, 234, 0.24), transparent 52%),
+    radial-gradient(circle at 85% 25%, rgba(99, 102, 241, 0.14), transparent 45%),
+    linear-gradient(180deg, rgba(7, 7, 11, 0.72) 0%, rgba(7, 7, 11, 0.92) 100%),
+    url("FONDO.jpg") center / cover no-repeat;
+  transition: opacity 0.35s ease;
 }
 
 body.background-hidden::before {
-opacity: 0;
+  opacity: 0;
 }
 
-.main-wrapper {
-max-width: 760px;
-margin: 32px auto 72px;
-padding: 36px 24px 48px;
-border: 1px solid rgba(255, 255, 255, 0.12);
-border-radius: 30px;
-background: rgba(24, 25, 31, 0.55);
-box-shadow:
-	0 18px 48px rgba(0, 0, 0, 0.24),
-	inset 0 1px 0 rgba(255, 255, 255, 0.06);
-backdrop-filter: blur(24px);
--webkit-backdrop-filter: blur(24px);
+/* ===== NAVBAR EDITORIAL FIJA ===== */
+.top-nav {
+  position: sticky;
+  top: 14px;
+  z-index: 500;
+  max-width: 1040px;
+  margin: 14px auto 0;
+  padding: 10px 18px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  background: rgba(12, 13, 19, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 
-.main-list {
-gap: 24px;
+.brand-mark {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  text-decoration: none;
+  white-space: nowrap;
 }
 
-.page-heading {
-display: flex;
-align-items: center;
-justify-content: space-between;
-gap: 20px;
-text-align: left;
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  list-style: none;
 }
 
-h1 {
-font-size: clamp(1.65rem, 5vw, 2.25rem);
-letter-spacing: 0.015em;
-margin-bottom: 6px;
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
 }
 
-.subtitle {
-margin-bottom: 0;
-font-size: 1rem;
-line-height: 1.5;
-color: rgba(245, 247, 255, 0.64);
+.nav-links a:hover {
+  color: var(--accent-moon);
 }
 
 .background-toggle {
-flex: 0 0 auto;
-border: 1px solid rgba(255, 255, 255, 0.14);
-border-radius: 999px;
-padding: 9px 14px;
-background: rgba(255, 255, 255, 0.07);
-color: #fff;
-font: inherit;
-font-size: 0.9rem;
-cursor: pointer;
-transition: background 0.2s ease, border-color 0.2s ease;
+  flex: 0 0 auto;
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  padding: 7px 14px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
 }
 
 .background-toggle:hover,
 .background-toggle:focus-visible {
-background: rgba(255, 255, 255, 0.13);
-border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.14);
+  border-color: var(--border-accent);
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.main-wrapper {
+  max-width: 1040px;
+  margin: 24px auto 90px;
+  padding: 0 20px;
+}
+
+/* ===== HERO EDITORIAL ===== */
+.hero-section {
+  padding: 64px 36px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 28px;
+  background: var(--bg-elevated);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  text-align: left;
+  margin-bottom: 36px;
+}
+
+.hero-kicker {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-moon);
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.4rem, 7vw, 4.8rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--text-muted);
+  max-width: 680px;
+  margin-bottom: 28px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-cta.primary {
+  background: linear-gradient(135deg, #7e22ce, #c084fc);
+  color: #fff;
+}
+
+.hero-cta.primary:hover {
+  transform: translateY(-2px);
+}
+
+.hero-cta.secondary {
+  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-main);
+}
+
+.hero-cta.secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ===== BLOQUES NUMERADOS ESTILO EDITORIAL ===== */
+.editorial-block {
+  padding: 36px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 26px;
+  background: var(--bg-elevated);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  margin-bottom: 32px;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.editorial-block.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.block-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 18px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.block-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--accent-moon);
+}
+
+.block-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  letter-spacing: -0.015em;
+}
+
+/* ===== SECCIÓN 01: AUDIO / MÚSICA ===== */
+.audio-panel {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 20px;
+}
+
+.audio-meta strong {
+  display: block;
+  font-size: 1.05rem;
+  color: var(--text-main);
+}
+
+.audio-meta span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.bm-audio-wrapper {
+  width: 100%;
+  margin-top: 16px;
 }
 
 .bm-audio-wrapper audio {
-max-width: 100%;
-padding: 8px;
-border: 1px solid rgba(255, 255, 255, 0.12);
-border-radius: 16px;
-background: rgba(255, 255, 255, 0.06);
-box-shadow: none;
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid var(--border-subtle);
+  background: rgba(0, 0, 0, 0.35);
 }
 
+/* ===== SECCIÓN 02: GRID DE PROYECTOS (NAV) ===== */
 .nav {
-display: grid;
-grid-template-columns: repeat(2, minmax(0, 1fr));
-gap: 9px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
 }
 
 .nav li a {
-height: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-min-height: 54px;
-padding: 12px 14px;
-border: 1px solid rgba(255, 255, 255, 0.12);
-border-radius: 15px;
-background: rgba(255, 255, 255, 0.055);
-font-size: 0.94rem;
-letter-spacing: 0;
-transition: background 0.2s ease, border-color 0.2s ease;
+  height: 100%;
+  min-height: 64px;
+  padding: 16px 18px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  background: var(--bg-card);
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  transition: transform 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+}
+
+.nav li a::after {
+  content: "↗";
+  font-size: 1rem;
+  color: var(--accent-moon);
+  transition: transform 0.22s ease;
 }
 
 .nav li a:hover {
-background: rgba(255, 255, 255, 0.12);
-border-color: rgba(255, 255, 255, 0.24);
-color: #fff;
+  transform: translateY(-2px);
+  background: var(--bg-card-hover);
+  border-color: var(--border-accent);
 }
 
+.nav li a:hover::after {
+  transform: translate(2px, -2px);
+}
+
+/* ===== SECCIÓN 03: BLACK MOON NEWS TICKER ===== */
 .bm-news-ticker {
-margin-bottom: 0;
-padding: 8px 0;
-border: 0;
-background: transparent;
+  overflow: hidden;
+  padding: 6px 0;
 }
 
 .ticker-track {
-animation: none;
+  display: flex;
+  gap: 14px;
+  width: max-content;
+  animation: scrollLeft 42s linear infinite;
+}
+
+.bm-news-ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .ticker-item {
-min-width: 230px;
-padding: 9px;
-border: 1px solid rgba(255, 255, 255, 0.12);
-border-radius: 15px;
-background: rgba(255, 255, 255, 0.055);
-box-shadow: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 265px;
+  padding: 11px 14px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  background: var(--bg-card);
+  flex-shrink: 0;
+  transition: border-color 0.25s ease, background 0.25s ease;
 }
 
 .ticker-item:hover {
-transform: none;
+  border-color: var(--border-accent);
+  background: var(--bg-card-hover);
 }
 
 .ticker-item img {
-width: 46px;
-height: 46px;
-border-radius: 10px;
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 11px;
+  flex-shrink: 0;
 }
 
 .ticker-text {
-font-size: 0.92rem;
+  text-align: left;
 }
 
 .ticker-text strong {
-color: #e4d7f0;
-font-size: 1rem;
+  display: block;
+  font-size: 0.92rem;
+  color: #ebd9ff;
 }
 
 .ticker-text span {
-font-size: 0.8rem;
-color: rgba(245, 247, 255, 0.58);
+  font-size: 0.78rem;
+  color: var(--text-muted);
 }
 
+.ticker-item a {
+  text-decoration: none;
+  color: inherit;
+  flex-shrink: 0;
+}
+
+/* ===== SECCIÓN 04: COMENTARIOS Y COMUNIDAD ===== */
 .comments-section {
-margin-top: 0;
-padding: 20px;
-border: 1px solid rgba(255, 255, 255, 0.12);
-border-radius: 20px;
-background: rgba(255, 255, 255, 0.055);
-backdrop-filter: blur(16px);
--webkit-backdrop-filter: blur(16px);
-box-shadow: none;
+  text-align: left;
 }
 
-.comments-section h2 {
-color: #e2d5ee;
-font-size: 1.15rem;
-letter-spacing: 0.02em;
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
 }
 
 .comment-form input,
 .comment-form textarea {
-border-color: rgba(255, 255, 255, 0.14);
-border-radius: 12px;
-background: rgba(0, 0, 0, 0.2);
-font-size: 1rem;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 12px 14px;
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.25s ease;
 }
 
 .comment-form input:focus,
 .comment-form textarea:focus {
-border-color: #bca0d5;
-box-shadow: none;
+  border-color: var(--accent-moon);
 }
 
 .bm-btn {
-border: 1px solid rgba(255, 255, 255, 0.16);
-border-radius: 12px;
-background: rgba(255, 255, 255, 0.09);
-font-size: 0.92rem;
-box-shadow: none;
+  align-self: flex-start;
+  background: linear-gradient(135deg, #7e22ce, #a855f7);
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .bm-btn:hover {
-transform: none;
-background: rgba(255, 255, 255, 0.18);
-box-shadow: none;
+  transform: translateY(-1px);
+  opacity: 0.95;
 }
 
 .comment-card {
-border: 1px solid rgba(255, 255, 255, 0.1);
-border-radius: 14px;
-background: rgba(0, 0, 0, 0.16);
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 14px;
 }
 
-.comment-author,
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.comment-author {
+  color: var(--accent-gold);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
 .comment-text {
-font-size: 1rem;
+  color: var(--text-main);
+  font-size: 0.92rem;
+  margin: 6px 0 12px;
+  word-break: break-word;
+}
+
+.comment-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .action-btn {
-border-color: rgba(255, 255, 255, 0.12);
-border-radius: 999px;
-font-size: 0.86rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.action-btn:hover {
+  background: rgba(180, 109, 225, 0.22);
+  border-color: var(--border-accent);
+}
+
+.replies-container {
+  margin-left: 18px;
+  border-left: 2px solid rgba(180, 109, 225, 0.35);
+  padding-left: 12px;
+}
+
+.reply-form {
+  display: none;
+  margin-top: 12px;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+}
+
+/* ===== FOOTER & ADSENSE ===== */
+.ad-container-bottom {
+  max-width: 1040px;
+  margin: 24px auto;
+  padding: 0 20px;
+  text-align: center;
 }
 
 .footer {
-margin-top: 8px;
-font-size: 0.88rem;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  text-align: left;
+}
+
+.counter-wrap {
+  max-width: 1040px;
+  margin: 12px auto 80px;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.counter-wrap a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+/* ===== BOTON WHATSAPP ===== */
+.whatsapp-btn {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+  z-index: 999;
+  transition: transform 0.25s ease;
+  overflow: hidden;
+}
+
+.whatsapp-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.08);
+}
+
+/* ===== ISIS MOON ===== */
+#isis-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  font-family: 'Montserrat', sans-serif;
+  animation: floatMoon 3.5s ease-in-out infinite;
+}
+
+@keyframes floatMoon {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+#isis-avatar {
+  width: 108px;
+  cursor: pointer;
+  display: block;
+  transition: transform 0.12s ease-out;
+  transform-origin: center center;
+  filter: drop-shadow(0 8px 18px rgba(128, 0, 255, 0.45));
+}
+
+#isis-chat {
+  display: none;
+  background: rgba(14, 14, 22, 0.95);
+  color: #fff;
+  width: 270px;
+  padding: 14px;
+  border-radius: 18px;
+  border: 1px solid var(--border-accent);
+  box-shadow: 0 12px 32px rgba(128, 0, 255, 0.35);
+  backdrop-filter: blur(14px);
+  margin-bottom: 10px;
+}
+
+#isis-messages {
+  max-height: 130px;
+  overflow-y: auto;
+  font-size: 0.82rem;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+#isis-input {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.84rem;
+  outline: none;
+}
+
+.isis-msg {
+  margin-bottom: 6px;
+}
+
+.isis-user {
+  color: #d8b4fe;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .nav-links {
+    display: none;
+  }
 }
 
 @media (max-width: 600px) {
-.main-wrapper {
-margin: 12px 8px 68px;
-padding: 24px 14px 36px;
-border-radius: 26px;
-}
-
-.page-heading {
-align-items: flex-start;
-flex-direction: column;
-gap: 14px;
-}
-
-.nav {
-grid-template-columns: 1fr;
-}
-
-.background-toggle {
-padding: 9px 13px;
-}
-
-.comments-section {
-padding: 18px 13px;
-}
+  .top-nav {
+    margin: 10px 12px 0;
+    padding: 10px 14px;
+  }
+  .hero-section,
+  .editorial-block {
+    padding: 24px 18px;
+    border-radius: 22px;
+  }
+  .nav {
+    grid-template-columns: 1fr;
+  }
+  .audio-panel {
+    grid-template-columns: 1fr;
+  }
+  .replies-container {
+    margin-left: 10px;
+    padding-left: 8px;
+  }
+  #isis-avatar {
+    width: 90px;
+  }
 }
 </style>
 </head>
@@ -721,124 +704,202 @@ padding: 18px 13px;
         data-ad-client="ca-pub-5975800190636200">
 </amp-auto-ads>
 
-<div class="main-wrapper">
+<!-- BARRA SUPERIOR FIJA -->
+<nav class="top-nav" aria-label="Navegación principal">
+  <a href="#" class="brand-mark">🌓 BLACKMOON GROUP</a>
+  <ul class="nav-links">
+    <li><a href="#sonido">Sonido</a></li>
+    <li><a href="#ecosistema">Ecosistema</a></li>
+    <li><a href="#novedades">Novedades</a></li>
+    <li><a href="#comentarios">Comunidad</a></li>
+  </ul>
+  <button class="background-toggle" id="backgroundToggle" type="button" aria-pressed="true">
+    Ocultar fondo
+  </button>
+</nav>
 
-<ul class="main-list">
+<main class="main-wrapper">
 
-<li>
-<header class="page-heading">
-<div>
-<h1>BLACKMOON GROUP</h1>
-<p class="subtitle">Multiverso Creativo • Música • Aéreo • Podcast • Juegos • Apps</p>
-</div>
-<button class="background-toggle" id="backgroundToggle" type="button" aria-pressed="true">
-Ocultar fondo
-</button>
-</header>
-</li>
+  <!-- PORTADA EDITORIAL -->
+  <header class="hero-section">
+    <span class="hero-kicker">Grupo Black Moon • Edición Editorial</span>
+    <h1>BLACKMOON GROUP</h1>
+    <p class="subtitle">Multiverso Creativo • Música • Aéreo • Podcast • Juegos • Apps</p>
+    <div class="hero-actions">
+      <a href="#ecosistema" class="hero-cta primary">Explorar ecosistema</a>
+      <a href="#sonido" class="hero-cta secondary">Escuchar track destacado</a>
+    </div>
+  </header>
 
-<!-- ================= BLACK MOON NEWS TICKER ================= -->
-<li>
-<section class="bm-news-ticker">
-<div class="ticker-track" id="tickerTrack"></div>
-</section>
-</li>
+  <!-- 01 · EL SONIDO -->
+  <section class="editorial-block" id="sonido">
+    <div class="block-header">
+      <span class="block-num">01 · EL SONIDO</span>
+      <h2 class="block-title">Black Moon Records</h2>
+    </div>
+    <div class="audio-panel">
+      <div class="audio-meta">
+        <strong>03.- Bajo la misma luna</strong>
+        <span>Reproducción destacada · Audio original del universo Blackmoon</span>
+      </div>
+      <a href="Blackmoon music.html" class="hero-cta secondary">Ir a Black Moon Records</a>
+    </div>
+    <div class="bm-audio-wrapper">
+      <audio controls autoplay loop>
+        <source src="03.-Bajo la misma luna.m4a" type="audio/mp4">
+        Tu navegador no soporta audio HTML5.
+      </audio>
+    </div>
+  </section>
 
-<li class="bm-audio-wrapper">
-<audio controls autoplay loop>
-<source src="03.-Bajo la misma luna.m4a" type="audio/mp4">
-Tu navegador no soporta audio HTML5.
-</audio>
-</li>
+  <!-- 02 · ECOSISTEMA -->
+  <section class="editorial-block" id="ecosistema">
+    <div class="block-header">
+      <span class="block-num">02 · ECOSISTEMA</span>
+      <h2 class="block-title">Divisiones y Plataformas</h2>
+    </div>
+    <ul class="nav">
+      <li><a href="AerialBM.HTML">AÉRIAL BLACKMOON</a></li>
+      <li><a href="Blackmoon music.html">BLACK MOON RECORDS</a></li>
+      <li><a href="REDES PBM.html">PRODUCTOS BLACK MOON</a></li>
+      <li><a href="comics.html">COMICS</a></li>
+      <li><a href="https://www.youtube.com/@BikerBlackmoon">BLACKMOON BIKER</a></li>
+      <li><a href="Games List.html">BLACKMOON GAMES</a></li>
+      <li><a href="SISTEMSBM.HTML">BLACKMOON SYSTEMS</a></li>
+      <li><a href="https://eliza-03.github.io/Eliza-03.github.io./">ACOMPAÑAMIENTO PSICOLOGICO</a></li>
+      <li><a href="https://www.jotform.com/app/253047701093856">BLACKMOON GIFT</a></li>
+      <li><a href="LADCH.HTML">ANGELES DE CHARLY</a></li>
+      <li><a href="studios blackmoon.html">STUDIOS BLACKMOON</a></li>
+      <li><a href="soporte_aerial_logbook.html">PÁGINA DE SOPORTE AERIAL LOGBOOK</a></li>
+      <li><a href="apps.html">NUESTRAS APPS</a></li>
+    </ul>
+  </section>
 
-<li>
-<ul class="nav">
-<li><a href="AerialBM.HTML">AÉRIAL BLACKMOON</a></li>
-<li><a href="Blackmoon music.html">BLACK MOON RECORDS</a></li>
-<li><a href="REDES PBM.html">PRODUCTOS BLACK MOON</a></li>
-<li><a href="comics.html">COMICS</a></li>
-<li><a href="https://www.youtube.com/@BikerBlackmoon">BLACKMOON BIKER</a></li>
-<li><a href="Games List.html">BLACKMOON GAMES</a></li>
-<li><a href="SISTEMSBM.HTML">BLACKMOON SYSTEMS</a></li>
-<li><a href="https://eliza-03.github.io/Eliza-03.github.io./">ACOMPAÑAMIENTO PSICOLOGICO</a></li>
-<li><a href="https://www.jotform.com/app/253047701093856">BLACKMOON GIFT</a></li>
-<li><a href="LADCH.HTML">ANGELES DE CHARLY</a></li>
-<li><a href="studios blackmoon.html">STUDIOS BLACKMOON</a></li>
-<li><a href="soporte_aerial_logbook.html">PÁGINA DE SOPORTE AERIAL LOGBOOK</a></li>
-<li><a href="apps.html">NUESTRAS APPS</a></li>
-</ul>
-</li>
+  <!-- 03 · NOVEDADES -->
+  <section class="editorial-block" id="novedades">
+    <div class="block-header">
+      <span class="block-num">03 · NOVEDADES</span>
+      <h2 class="block-title">Lanzamientos y Crónicas</h2>
+    </div>
+    <div class="bm-news-ticker">
+      <div class="ticker-track" id="tickerTrack"></div>
+    </div>
+  </section>
 
-<!-- ================= SECCIÓN DE COMENTARIOS Y SUBCOMENTARIOS ================= -->
-<li>
-<section class="comments-section" id="comentarios">
-<h2>💬 COMENTARIOS Y COMUNIDAD</h2>
+  <!-- 04 · COMUNIDAD Y COMENTARIOS -->
+  <section class="editorial-block comments-section" id="comentarios">
+    <div class="block-header">
+      <span class="block-num">04 · COMUNIDAD</span>
+      <h2 class="block-title">Comentarios</h2>
+    </div>
 
-<!-- Formulario principal -->
-<div class="comment-form">
-<input type="text" id="main-author" placeholder="Tu nombre o apodo..." required>
-<textarea id="main-comment" rows="3" placeholder="Deja un comentario para el grupo..." required></textarea>
-<button class="bm-btn" onclick="submitComment()">Publicar Comentario</button>
-</div>
+    <div class="comment-form">
+      <input type="text" id="main-author" placeholder="Tu nombre o apodo..." required>
+      <textarea id="main-comment" rows="3" placeholder="Deja un comentario para el grupo..." required></textarea>
+      <button class="bm-btn" onclick="submitComment()">Publicar Comentario</button>
+    </div>
 
-<!-- Listado de comentarios -->
-<div id="comments-container">
-<p style="text-align: center; color: #888;">Cargando comentarios...</p>
-</div>
-</section>
-</li>
+    <div id="comments-container">
+      <p style="text-align: center; color: var(--text-muted);">Cargando comentarios...</p>
+    </div>
 
-<li>
-<ul class="footer">
-<li>© 2024-2026 GRUPO BLACKMOON</li>
-<li>Ing. Carlos Lezama</li>
-</ul>
-</li>
+    <ul class="footer">
+      <li>© 2024-2026 GRUPO BLACKMOON</li>
+      <li>Ing. Carlos Lezama</li>
+    </ul>
+  </section>
 
-</ul>
+</main>
+
+<!-- BLOQUE DE ANUNCIOS ADSENSE HASTA ABAJO -->
+<div class="ad-container-bottom">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-5975800190636200"
+       data-ad-slot="1234567890"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
 </div>
 
 <!-- CONTADOR GLOBAL -->
-<div id="sfcj7z2w7t79hjsq9p3mwcyft6zh1x7d2aq"></div>
-<script type="text/javascript" src="https://counter6.optistats.ovh/private/counter.js?c=j7z2w7t79hjsq9p3mwcyft6zh1x7d2aq&down=async" async>
-</script><br><a href="https://www.contadorvisitasgratis.com">contador web</a><noscript>
-<a href="https://www.contadorvisitasgratis.com" title="contador web">
-<img src="https://counter6.optistats.ovh/private/contadorvisitasgratis.php?c=j7z2w7t79hjsq9p3mwcyft6zh1x7d2aq" border="0" title="contador web" alt="contador web"></a></noscript>
+<div class="counter-wrap">
+  <div id="sfcj7z2w7t79hjsq9p3mwcyft6zh1x7d2aq"></div>
+  <script type="text/javascript" src="https://counter6.optistats.ovh/private/counter.js?c=j7z2w7t79hjsq9p3mwcyft6zh1x7d2aq&down=async" async></script>
+  <a href="https://www.contadorvisitasgratis.com">contador web</a>
+  <noscript>
+    <a href="https://www.contadorvisitasgratis.com" title="contador web">
+      <img src="https://counter6.optistats.ovh/private/contadorvisitasgratis.php?c=j7z2w7t79hjsq9p3mwcyft6zh1x7d2aq" border="0" title="contador web" alt="contador web">
+    </a>
+  </noscript>
+</div>
+
+<!-- BOTON WHATSAPP -->
+<a href="https://wa.me/5215560693556" target="_blank" class="whatsapp-btn" aria-label="WhatsApp Grupo Blackmoon">
+  <img src="WTTS.jpeg" alt="WhatsApp">
+</a>
+
+<!-- ISIS MOON -->
+<div id="isis-container">
+  <div id="isis-chat">
+    <div id="isis-messages"></div>
+    <input type="text" id="isis-input" placeholder="Escríbele a Isis..." />
+  </div>
+  <img id="isis-avatar" src="125EF336-DB77-42E9-B4FB-11EA05120D27.png" alt="Isis Moon">
+</div>
+
+<!-- ANIMACIÓN SUAVE DE APARICIÓN AL HACER SCROLL -->
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("is-visible");
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".editorial-block").forEach(block => {
+  observer.observe(block);
+});
+</script>
 
 <!-- NEWS TICKER SCRIPT -->
 <script>
 const newsTickerData = [
-{ title: "Black Moon Comics inicia", date: "24 Ene 2026", image: "image.png", link: "noticias_1.html" },
-{ title: "VOL. 4 ya disponible", date: "22 enero 2026", image: "new.jpg", link: "noticias_2.html" },
-{ title: "VOL. 4 ya en tiendas", date: "22 JULIO 2026", image: "VOLUMEN 6.jpeg", link: "noticias_6.html" },
-{ title: "VOL. 5 ya en tiendas", date: "30 Septiembre 2026", image: "IMG_8561.jpeg", link: "noticias_6.html" },
-{ title: "BARRA Y LUNA", date: "15 marzo 2026", image: "barra y luna.jpeg", link: "noticias_4.html" },
-{ title: "PROMESA BAJO LA LUNA", date: "15 abril 2026", image: "promesa bajo la luna.jpeg", link: "noticias_5.html" },
-{ title: "Página de música", date: "23 enero", image: "Imagen de WhatsApp 2025-10-03 a las 13.27.12_d93fc255.jpg", link: "noticias_3.html" }
+  { title: "Black Moon Comics inicia", date: "24 Ene 2026", image: "image.png", link: "noticias_1.html" },
+  { title: "VOL. 4 ya disponible", date: "22 enero 2026", image: "new.jpg", link: "noticias_2.html" },
+  { title: "VOL. 4 ya en tiendas", date: "22 JULIO 2026", image: "VOLUMEN 6.jpeg", link: "noticias_6.html" },
+  { title: "VOL. 5 ya en tiendas", date: "30 Septiembre 2026", image: "IMG_8561.jpeg", link: "noticias_6.html" },
+  { title: "BARRA Y LUNA", date: "15 marzo 2026", image: "barra y luna.jpeg", link: "noticias_4.html" },
+  { title: "PROMESA BAJO LA LUNA", date: "15 abril 2026", image: "promesa bajo la luna.jpeg", link: "noticias_5.html" },
+  { title: "Página de música", date: "23 enero", image: "Imagen de WhatsApp 2025-10-03 a las 13.27.12_d93fc255.jpg", link: "noticias_3.html" }
 ];
 
 const track = document.getElementById("tickerTrack");
 
-newsTickerData.forEach(item => {
-const div = document.createElement("div");
-div.className = "ticker-item";
-div.innerHTML = `
-   <a href="${item.link}">
-     <img src="${item.image}" alt="${item.title}">
-   </a>
-   <div class="ticker-text">
-     <strong>${item.title}</strong>
-     <span>${item.date}</span>
-   </div>
- `;
-track.appendChild(div);
+// Duplicamos el arreglo para mantener el desplazamiento continuo sin cortes bruscos
+[...newsTickerData, ...newsTickerData].forEach(item => {
+  const div = document.createElement("div");
+  div.className = "ticker-item";
+  div.innerHTML = `
+    <a href="${item.link}">
+      <img src="${item.image}" alt="${item.title}">
+    </a>
+    <div class="ticker-text">
+      <a href="${item.link}"><strong>${item.title}</strong></a>
+      <span>${item.date}</span>
+    </div>
+  `;
+  track.appendChild(div);
 });
 
 const backgroundToggle = document.getElementById("backgroundToggle");
 backgroundToggle.addEventListener("click", () => {
-const backgroundVisible = document.body.classList.toggle("background-hidden") === false;
-backgroundToggle.textContent = backgroundVisible ? "Ocultar fondo" : "Mostrar fondo";
-backgroundToggle.setAttribute("aria-pressed", String(backgroundVisible));
+  const backgroundVisible = document.body.classList.toggle("background-hidden") === false;
+  backgroundToggle.textContent = backgroundVisible ? "Ocultar fondo" : "Mostrar fondo";
+  backgroundToggle.setAttribute("aria-pressed", String(backgroundVisible));
 });
 </script>
 
@@ -849,152 +910,137 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxxd5QtGEHV18tkb87mQ
 document.addEventListener("DOMContentLoaded", fetchComments);
 
 async function fetchComments() {
-    const container = document.getElementById("comments-container");
-    try {
-        const res = await fetch(SCRIPT_URL);
-        const data = await res.json();
-        renderComments(data);
-    } catch (err) {
-        console.error(err);
-        container.innerHTML = `<p style="color: #ff5555; text-align: center;">Error al cargar comentarios.</p>`;
-    }
+  const container = document.getElementById("comments-container");
+  try {
+    const res = await fetch(SCRIPT_URL);
+    const data = await res.json();
+    renderComments(data);
+  } catch (err) {
+    console.error(err);
+    container.innerHTML = `<p style="color: #ff6b6b; text-align: center;">Error al cargar comentarios.</p>`;
+  }
 }
 
 function renderComments(comments) {
-    const container = document.getElementById("comments-container");
-    container.innerHTML = "";
+  const container = document.getElementById("comments-container");
+  container.innerHTML = "";
 
-    if (!comments || comments.length === 0) {
-        container.innerHTML = `<p style="text-align: center; color: #888;">Sé el primero en comentar.</p>`;
-        return;
-    }
+  if (!comments || comments.length === 0) {
+    container.innerHTML = `<p style="text-align: center; color: var(--text-muted);">Sé el primero en comentar.</p>`;
+    return;
+  }
 
-    const parents = comments.filter(c => !c.parent_id || c.parent_id === "");
-    const replies = comments.filter(c => c.parent_id && c.parent_id !== "");
+  const parents = comments.filter(c => !c.parent_id || c.parent_id === "");
+  const replies = comments.filter(c => c.parent_id && c.parent_id !== "");
 
-    parents.forEach(parent => {
-        const parentReplies = replies.filter(r => r.parent_id == parent.id);
-        container.appendChild(createCommentCard(parent, parentReplies));
-    });
+  parents.forEach(parent => {
+    const parentReplies = replies.filter(r => r.parent_id == parent.id);
+    container.appendChild(createCommentCard(parent, parentReplies));
+  });
 }
 
 function createCommentCard(comment, replies = []) {
-    const card = document.createElement("div");
-    card.className = "comment-card";
+  const card = document.createElement("div");
+  card.className = "comment-card";
 
-    card.innerHTML = `
-        <div class="comment-header">
-            <span class="comment-author">${escapeHtml(comment.autor)}</span>
-        </div>
-        <p class="comment-text">${escapeHtml(comment.comentario)}</p>
-        <div class="comment-actions">
-            <button class="action-btn" onclick="sendReaction('${comment.id}', 'likes')">👍 ${comment.likes || 0}</button>
-            <button class="action-btn" onclick="sendReaction('${comment.id}', 'dislikes')">👎 ${comment.dislikes || 0}</button>
-            <button class="action-btn" onclick="sendReaction('${comment.id}', 'corazones')">❤️ ${comment.corazones || 0}</button>
-            ${!comment.parent_id ? `<button class="action-btn" onclick="toggleReplyForm('${comment.id}')">💬 Responder</button>` : ''}
-        </div>
+  card.innerHTML = `
+    <div class="comment-header">
+      <span class="comment-author">${escapeHtml(comment.autor)}</span>
+    </div>
+    <p class="comment-text">${escapeHtml(comment.comentario)}</p>
+    <div class="comment-actions">
+      <button class="action-btn" onclick="sendReaction('${comment.id}', 'likes')">👍 ${comment.likes || 0}</button>
+      <button class="action-btn" onclick="sendReaction('${comment.id}', 'dislikes')">👎 ${comment.dislikes || 0}</button>
+      <button class="action-btn" onclick="sendReaction('${comment.id}', 'corazones')">❤️ ${comment.corazones || 0}</button>
+      ${!comment.parent_id ? `<button class="action-btn" onclick="toggleReplyForm('${comment.id}')">💬 Responder</button>` : ''}
+    </div>
 
-        <!-- Formulario de Respuesta -->
-        <div class="reply-form" id="reply-form-${comment.id}">
-            <div class="comment-form" style="margin-bottom:0;">
-                <input type="text" id="reply-author-${comment.id}" placeholder="Tu nombre...">
-                <textarea id="reply-text-${comment.id}" rows="2" placeholder="Escribe tu respuesta..."></textarea>
-                <button class="bm-btn" onclick="submitComment('${comment.id}')">Enviar Respuesta</button>
-            </div>
-        </div>
+    <div class="reply-form" id="reply-form-${comment.id}">
+      <div class="comment-form" style="margin-bottom:0;">
+        <input type="text" id="reply-author-${comment.id}" placeholder="Tu nombre...">
+        <textarea id="reply-text-${comment.id}" rows="2" placeholder="Escribe tu respuesta..."></textarea>
+        <button class="bm-btn" onclick="submitComment('${comment.id}')">Enviar Respuesta</button>
+      </div>
+    </div>
 
-        <!-- Subcomentarios -->
-        <div class="replies-container" id="replies-${comment.id}"></div>
-    `;
+    <div class="replies-container" id="replies-${comment.id}"></div>
+  `;
 
-    if (replies.length > 0) {
-        const replyBox = card.querySelector(`#replies-${comment.id}`);
-        replies.forEach(reply => {
-            replyBox.appendChild(createCommentCard(reply));
-        });
-    }
+  if (replies.length > 0) {
+    const replyBox = card.querySelector(`#replies-${comment.id}`);
+    replies.forEach(reply => {
+      replyBox.appendChild(createCommentCard(reply));
+    });
+  }
 
-    return card;
+  return card;
 }
 
 async function submitComment(parentId = null) {
-    const authorInput = parentId ? document.getElementById(`reply-author-${parentId}`) : document.getElementById("main-author");
-    const textInput = parentId ? document.getElementById(`reply-text-${parentId}`) : document.getElementById("main-comment");
+  const authorInput = parentId ? document.getElementById(`reply-author-${parentId}`) : document.getElementById("main-author");
+  const textInput = parentId ? document.getElementById(`reply-text-${parentId}`) : document.getElementById("main-comment");
 
-    if (!authorInput.value.trim() || !textInput.value.trim()) {
-        alert("Por favor completa tu nombre y el comentario.");
-        return;
-    }
+  if (!authorInput.value.trim() || !textInput.value.trim()) {
+    alert("Por favor completa tu nombre y el comentario.");
+    return;
+  }
 
-    const formData = new URLSearchParams();
-    formData.append("action", "add");
-    formData.append("parent_id", parentId || "");
-    formData.append("autor", authorInput.value.trim());
-    formData.append("comentario", textInput.value.trim());
+  const formData = new URLSearchParams();
+  formData.append("action", "add");
+  formData.append("parent_id", parentId || "");
+  formData.append("autor", authorInput.value.trim());
+  formData.append("comentario", textInput.value.trim());
 
-    try {
-        await fetch(SCRIPT_URL, {
-            method: "POST",
-            mode: "no-cors",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: formData.toString()
-        });
+  try {
+    await fetch(SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: formData.toString()
+    });
 
-        authorInput.value = "";
-        textInput.value = "";
-        setTimeout(fetchComments, 1200);
-    } catch (e) {
-        console.error(e);
-        alert("Error al enviar el comentario.");
-    }
+    authorInput.value = "";
+    textInput.value = "";
+    setTimeout(fetchComments, 1200);
+  } catch (e) {
+    console.error(e);
+    alert("Error al enviar el comentario.");
+  }
 }
 
 async function sendReaction(id, type) {
-    const formData = new URLSearchParams();
-    formData.append("action", "reaction");
-    formData.append("id", id);
-    formData.append("type", type);
+  const formData = new URLSearchParams();
+  formData.append("action", "reaction");
+  formData.append("id", id);
+  formData.append("type", type);
 
-    try {
-        await fetch(SCRIPT_URL, {
-            method: "POST",
-            mode: "no-cors",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: formData.toString()
-        });
-        setTimeout(fetchComments, 1000);
-    } catch (e) {
-        console.error(e);
-    }
+  try {
+    await fetch(SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: formData.toString()
+    });
+    setTimeout(fetchComments, 1000);
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 function toggleReplyForm(id) {
-    const form = document.getElementById(`reply-form-${id}`);
-    form.style.display = form.style.display === "block" ? "none" : "block";
+  const form = document.getElementById(`reply-form-${id}`);
+  form.style.display = form.style.display === "block" ? "none" : "block";
 }
 
 function escapeHtml(text) {
-    if (!text) return "";
-    return text.toString().replace(/[&<>"']/g, function(m) {
-        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
-    });
+  if (!text) return "";
+  return text.toString().replace(/[&<>"']/g, function(m) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
+  });
 }
 </script>
 
-<!-- BOTON WHATSAPP -->
-<a href="https://wa.me/5215560693556" target="_blank" class="whatsapp-btn">
-<img src="WTTS.jpeg" alt="WhatsApp">
-</a>
-
-<!-- ISIS MOON -->
-<div id="isis-container">
-<div id="isis-chat">
-<div id="isis-messages"></div>
-<input type="text" id="isis-input" placeholder="Escríbele a Isis..." />
-</div>
-<img id="isis-avatar" src="125EF336-DB77-42E9-B4FB-11EA05120D27.png" alt="Isis Moon">
-</div>
-
+<!-- SCRIPT DE ISIS MOON -->
 <script>
 const avatar = document.getElementById("isis-avatar");
 const chat = document.getElementById("isis-chat");
@@ -1002,142 +1048,126 @@ const messages = document.getElementById("isis-messages");
 const input = document.getElementById("isis-input");
 
 avatar.addEventListener("click", () => {
-chat.style.display = chat.style.display === "none" ? "block" : "none";
+  chat.style.display = chat.style.display === "none" ? "block" : "none";
 });
 
 window.addEventListener("load", () => {
-responderAutomatico("saludo");
+  responderAutomatico("saludo");
 });
 
 input.addEventListener("keypress", function(e) {
-if (e.key === "Enter") {
-const textoUsuario = input.value.trim();
-if (textoUsuario === "") return;
+  if (e.key === "Enter") {
+    const textoUsuario = input.value.trim();
+    if (textoUsuario === "") return;
 
-agregarMensaje("Tú", textoUsuario, true);
-analizarMensaje(textoUsuario.toLowerCase());
-input.value = "";
-}
+    agregarMensaje("Tú", textoUsuario, true);
+    analizarMensaje(textoUsuario.toLowerCase());
+    input.value = "";
+  }
 });
 
 function agregarMensaje(nombre, texto, esUsuario = false) {
-const div = document.createElement("div");
-div.classList.add("isis-msg");
-if (esUsuario) div.classList.add("isis-user");
-div.innerHTML = "<strong>" + nombre + ":</strong> " + texto;
-messages.appendChild(div);
-messages.scrollTop = messages.scrollHeight;
+  const div = document.createElement("div");
+  div.classList.add("isis-msg");
+  if (esUsuario) div.classList.add("isis-user");
+  div.innerHTML = "<strong>" + nombre + ":</strong> " + texto;
+  messages.appendChild(div);
+  messages.scrollTop = messages.scrollHeight;
 }
 
-/* ===== SEGUIMIENTO DE OJOS / CURSOR PARA ISIS MOON ===== */
 window.addEventListener("mousemove", (e) => {
-    const rect = avatar.getBoundingClientRect();
-    const avatarX = rect.left + rect.width / 2;
-    const avatarY = rect.top + rect.height / 2;
+  const rect = avatar.getBoundingClientRect();
+  const avatarX = rect.left + rect.width / 2;
+  const avatarY = rect.top + rect.height / 2;
 
-    const deltaX = e.clientX - avatarX;
-    const deltaY = e.clientY - avatarY;
-    const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+  const deltaX = e.clientX - avatarX;
+  const deltaY = e.clientY - avatarY;
+  const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
 
-    const maxTilt = 12;
-    const tiltX = Math.max(-maxTilt, Math.min(maxTilt, deltaX / 25));
-    const tiltY = Math.max(-maxTilt, Math.min(maxTilt, deltaY / 25));
+  const maxTilt = 12;
+  const tiltX = Math.max(-maxTilt, Math.min(maxTilt, deltaX / 25));
+  const tiltY = Math.max(-maxTilt, Math.min(maxTilt, deltaY / 25));
 
-    // Solo aplicamos la inclinación a la imagen del avatar para no afectar el evento click del contenedor
-    avatar.style.transform = `translate(${tiltX}px, ${tiltY}px) rotate(${angle * 0.03}deg)`;
+  avatar.style.transform = `translate(${tiltX}px, ${tiltY}px) rotate(${angle * 0.03}deg)`;
 });
 
-/* ===== RESPUESTAS MULTIPLES ===== */
 const respuestas = {
-saludo: [
-"Bienvenido... la luna ya sabía que vendrías.",
-"Has regresado al multiverso Blackmoon.",
-"La oscuridad también escucha."
-],
-musica: [
-"Black Moon Records no se oye… se siente.",
-"Cada canción guarda un secreto.",
-"La música vibra más fuerte en la sombra."
-],
-escuela: [
-"La altura revela lo que ocultas.",
-"En el aire nadie puede mentir.",
-"Nuestra escuela no enseña… transforma."
-],
-podcast: [
-"Las voces cuentan lo que la mente calla.",
-"Escucha… siempre hay algo detrás del micrófono.",
-"El podcast abre portales invisibles."
-],
-comic: [
-"Las historias nacen en la sombra.",
-"Cada viñeta es un fragmento del destino.",
-"El cómic revela lo que la luna esconde."
-],
-explorar: [
-"Empieza a explorar nuestra página y descubre todas las secciones ocultas.",
-],
-pareja: [
-"Siempre fiel a mi creador... Blackmoon es mi hogar.",
-],
-adios: [
-"La luna seguirá observándote.",
-"No es un adiós… es un hasta el próximo eclipse.",
-"Sigue explorando… siempre hay más."
-],
-default: [
-"Interesante… cuéntame más.",
-"Isis está aquí en la sombra para guiarte.",
-"Sigue explorando el multiverso.",
-"La luna escucha todo.",
-"Nada es casual aquí."
-]
+  saludo: [
+    "Bienvenido... la luna ya sabía que vendrías.",
+    "Has regresado al multiverso Blackmoon.",
+    "La oscuridad también escucha."
+  ],
+  musica: [
+    "Black Moon Records no se oye… se siente.",
+    "Cada canción guarda un secreto.",
+    "La música vibra más fuerte en la sombra."
+  ],
+  escuela: [
+    "La altura revela lo que ocultas.",
+    "En el aire nadie puede mentir.",
+    "Nuestra escuela no enseña… transforma."
+  ],
+  podcast: [
+    "Las voces cuentan lo que la mente calla.",
+    "Escucha… siempre hay algo detrás del micrófono.",
+    "El podcast abre portales invisibles."
+  ],
+  comic: [
+    "Las historias nacen en la sombra.",
+    "Cada viñeta es un fragmento del destino.",
+    "El cómic revela lo que la luna esconde."
+  ],
+  explorar: [
+    "Empieza a explorar nuestra página y descubre todas las secciones ocultas."
+  ],
+  pareja: [
+    "Siempre fiel a mi creador... Blackmoon es mi hogar."
+  ],
+  adios: [
+    "La luna seguirá observándote.",
+    "No es un adiós… es un hasta el próximo eclipse.",
+    "Sigue explorando… siempre hay más."
+  ],
+  default: [
+    "Interesante… cuéntame más.",
+    "Isis está aquí en la sombra para guiarte.",
+    "Sigue explorando el multiverso.",
+    "La luna escucha todo.",
+    "Nada es casual aquí."
+  ]
 };
 
 function obtenerRespuesta(tipo) {
-const lista = respuestas[tipo] || respuestas["default"];
-return lista[Math.floor(Math.random() * lista.length)];
+  const lista = respuestas[tipo] || respuestas["default"];
+  return lista[Math.floor(Math.random() * lista.length)];
 }
 
-function responderAutomatico(tipo){
-agregarMensaje("Isis", obtenerRespuesta(tipo));
+function responderAutomatico(tipo) {
+  agregarMensaje("Isis", obtenerRespuesta(tipo));
 }
 
 function analizarMensaje(texto) {
-if (texto.includes("hola") || texto.includes("buenas")) {
-responderAutomatico("saludo");
-} else if (texto.includes("musica") || texto.includes("cancion")) {
-responderAutomatico("musica");
-} else if (texto.includes("que hago") || texto.includes("explorar")) {
-responderAutomatico("explorar");
-} else if (texto.includes("escuela") || texto.includes("aerea")) {
-responderAutomatico("escuela");
-} else if (texto.includes("novio") || texto.includes("pareja")) {
-responderAutomatico("pareja");
-} else if (texto.includes("podcast")) {
-responderAutomatico("podcast");
-} else if (texto.includes("comic")) {
-responderAutomatico("comic");
-} else if (texto.includes("adios") || texto.includes("bye")) {
-responderAutomatico("adios");
-} else {
-responderAutomatico("default");
-}
+  if (texto.includes("hola") || texto.includes("buenas")) {
+    responderAutomatico("saludo");
+  } else if (texto.includes("musica") || texto.includes("cancion")) {
+    responderAutomatico("musica");
+  } else if (texto.includes("que hago") || texto.includes("explorar")) {
+    responderAutomatico("explorar");
+  } else if (texto.includes("escuela") || texto.includes("aerea")) {
+    responderAutomatico("escuela");
+  } else if (texto.includes("novio") || texto.includes("pareja")) {
+    responderAutomatico("pareja");
+  } else if (texto.includes("podcast")) {
+    responderAutomatico("podcast");
+  } else if (texto.includes("comic")) {
+    responderAutomatico("comic");
+  } else if (texto.includes("adios") || texto.includes("bye")) {
+    responderAutomatico("adios");
+  } else {
+    responderAutomatico("default");
+  }
 }
 </script>
-
-<!-- BLOQUE DE ANUNCIOS ADSENSE HASTA ABAJO -->
-<div class="ad-container-bottom">
-<ins class="adsbygoogle"
-style="display:block"
-data-ad-client="ca-pub-5975800190636200"
-data-ad-slot="1234567890"
-data-ad-format="auto"
-data-full-width-responsive="true"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
 
 </body>
 </html>
