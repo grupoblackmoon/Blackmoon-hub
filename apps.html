@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es" class="dark">
+<html lang="es" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestras Apps — Blackmoon</title>
+    <title>Portafolio de Aplicaciones — Blackmoon Labs</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -12,12 +12,12 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            dark: '#0a0b0e',
-                            card: '#12141c',
-                            border: '#1e2230',
-                            accent: '#6366f1',
-                            accentHover: '#4f46e5'
+                        editorial: {
+                            bg: '#09090b',
+                            surface: '#0f0f12',
+                            border: '#1f1f24',
+                            borderHover: '#3f3f46',
+                            muted: '#8e8e98'
                         }
                     }
                 }
@@ -26,318 +26,286 @@
     </script>
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Inter Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Inter & Plus Jakarta Sans Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #09090b;
+            color: #f4f4f5;
         }
-        .glow-effect:hover {
-            box-shadow: 0 0 25px rgba(99, 102, 241, 0.15);
+        h1, h2, h3, .font-display {
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
     </style>
 </head>
-<body class="bg-brand-dark text-gray-100 min-h-screen flex flex-col selection:bg-indigo-500 selection:text-white">
+<body class="bg-editorial-bg text-zinc-100 min-h-screen flex flex-col antialiased selection:bg-zinc-100 selection:text-zinc-900">
 
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-brand-dark/80 border-b border-brand-border">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center shadow-lg shadow-indigo-500/30">
-                    <i class="fa-solid fa-layer-group text-white text-lg"></i>
-                </div>
-                <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-white via-gray-200 to-indigo-400 bg-clip-text text-transparent">
-                    Nuestras Apps
-                </span>
-            </div>
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-400">
-                <a href="#ios" class="hover:text-indigo-400 transition-colors">iOS Apps</a>
-                <a href="#android" class="hover:text-indigo-400 transition-colors">Android Apps</a>
-                <a href="#contacto" class="hover:text-indigo-400 transition-colors">Contacto</a>
+    <!-- Navegación Minimalista -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-editorial-bg/85 border-b border-editorial-border">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 text-sm font-semibold tracking-widest uppercase text-zinc-100">
+                <span class="w-2 h-2 rounded-full bg-zinc-100"></span>
+                Blackmoon Labs
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest text-editorial-muted">
+                <a href="#ios" class="hover:text-white transition-colors">iOS</a>
+                <a href="#android" class="hover:text-white transition-colors">Android</a>
+                <a href="#contacto" class="hover:text-white transition-colors">Contacto</a>
             </nav>
-            <div>
-                <a href="#contacto" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium transition-all shadow-md shadow-indigo-600/20">
-                    Soporte
-                </a>
-            </div>
+            <a href="#contacto" class="text-xs uppercase tracking-widest text-zinc-300 hover:text-white border border-editorial-border hover:border-editorial-borderHover px-4 py-2 rounded-lg transition-colors">
+                Soporte
+            </a>
         </div>
     </header>
 
     <main class="flex-grow">
-        <section class="relative overflow-hidden py-20 lg:py-28">
-            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900/20 via-brand-dark to-brand-dark pointer-events-none"></div>
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 mb-6">
-                    <i class="fa-solid fa-sparkles"></i> Ecosistema Blackmoon
-                </span>
-                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6">
-                    Explora Nuestro <span class="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">Portafolio de Apps</span>
-                </h1>
-                <p class="max-w-2xl mx-auto text-lg text-gray-400 mb-10">
-                    Diseñadas con precisión, estética minimalista y alto rendimiento para sistemas iOS y Android. Descubre nuestras aplicaciones creadas para potenciar tu día a día.
+        <!-- Encabezado Editorial -->
+        <section class="py-24 lg:py-32 border-b border-editorial-border">
+            <div class="max-w-6xl mx-auto px-6">
+                <p class="text-xs uppercase tracking-[0.2em] text-editorial-muted mb-6">
+                    División de Desarrollo de Software · Grupo Blackmoon
                 </p>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="#ios" class="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-medium transition-all flex items-center gap-2 shadow-lg shadow-indigo-600/25">
-                        <i class="fa-brands fa-apple text-lg"></i> Ver Apps de iOS
+                <h1 class="text-4xl sm:text-6xl font-semibold tracking-tight text-white max-w-3xl leading-[1.1] mb-6">
+                    Portafolio de Aplicaciones Móviles
+                </h1>
+                <p class="max-w-xl text-base sm:text-lg text-editorial-muted font-light leading-relaxed mb-10">
+                    Soluciones digitales diseñadas bajo estándares nativos de rendimiento, arquitectura limpia y estética minimalista para iOS y Android.
+                </p>
+                <div class="flex flex-wrap items-center gap-4">
+                    <a href="#ios" class="px-6 py-3 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 text-sm font-medium transition-colors flex items-center gap-2.5">
+                        <i class="fa-brands fa-apple text-base"></i> Catálogo iOS
                     </a>
-                    <a href="#android" class="px-6 py-3 rounded-xl bg-brand-card hover:bg-brand-border text-gray-200 font-medium border border-brand-border transition-all flex items-center gap-2">
-                        <i class="fa-brands fa-android text-lg"></i> Ver Apps de Android
+                    <a href="#android" class="px-6 py-3 rounded-lg bg-transparent hover:bg-editorial-surface text-zinc-200 text-sm font-medium border border-editorial-border hover:border-editorial-borderHover transition-colors flex items-center gap-2.5">
+                        <i class="fa-brands fa-android text-base"></i> Catálogo Android
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN IOS -->
-        <section id="ios" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center gap-3 mb-10 pb-4 border-b border-brand-border">
-                <div class="w-12 h-12 rounded-2xl bg-gray-800/80 border border-gray-700 flex items-center justify-center text-white text-2xl shadow-inner">
-                    <i class="fa-brands fa-apple"></i>
-                </div>
+        <!-- 01 · SECCIÓN IOS -->
+        <section id="ios" class="py-20 max-w-6xl mx-auto px-6 border-b border-editorial-border">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
                 <div>
-                    <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Apps de iOS</h2>
-                    <p class="text-sm text-gray-400">Desarrolladas nativamente para el ecosistema Apple</p>
+                    <span class="text-xs font-mono uppercase tracking-widest text-editorial-muted block mb-2">01 / Ecosistema Apple</span>
+                    <h2 class="text-2xl sm:text-3xl font-semibold text-white tracking-tight">Aplicaciones para iOS</h2>
                 </div>
+                <p class="text-sm text-editorial-muted">7 aplicaciones publicadas en App Store</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 <!-- Card 1: Aerial Logbook -->
-                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 glow-effect group">
+                <article class="bg-editorial-surface border border-editorial-border hover:border-editorial-borderHover rounded-xl p-5 flex flex-col justify-between transition-colors group">
                     <div>
-                        <div class="w-full h-48 rounded-xl bg-gray-900 border border-brand-border overflow-hidden mb-5 relative flex items-center justify-center group-hover:border-indigo-500/50 transition-colors">
-                            <img src="aerial logbook.jpg" alt="Aerial Logbook" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null;this.src='https://placehold.co/600x400/12141c/6366f1?text=Aerial+Logbook'">
-                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-lg text-xs font-semibold bg-brand-dark/80 backdrop-blur text-indigo-400 border border-brand-border">
-                                iOS / iPadOS
+                        <div class="w-full h-44 rounded-lg bg-zinc-950 border border-editorial-border overflow-hidden mb-5 relative">
+                            <img src="aerial logbook.jpg" alt="Aerial Logbook" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500" onerror="this.onerror=null;this.src='https://placehold.co/600x400/0f0f12/a1a1aa?text=Aerial+Logbook'">
+                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded text-[11px] font-medium tracking-wide bg-editorial-bg/90 text-zinc-300 border border-editorial-border">
+                                iOS · iPadOS
                             </span>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Aerial Logbook</h3>
-                        <p class="text-sm text-gray-400 mb-6 line-clamp-3">
-                            Bitácora de vuelo avanzada diseñada para artistas aéreos. Registra horas, fotos, trucos y más con estilo minimalista.
+                        <h3 class="text-lg font-semibold text-white mb-2">Aerial Logbook</h3>
+                        <p class="text-sm text-editorial-muted font-light leading-relaxed mb-6 line-clamp-3">
+                            Bitácora de vuelo avanzada diseñada para artistas aéreos. Registra horas, fotografías, trucos y progreso técnico.
                         </p>
                     </div>
-                    <div class="pt-4 border-t border-brand-border flex items-center justify-between">
-                        <span class="text-xs text-indigo-400 font-medium"><i class="fa-solid fa-circle-check mr-1"></i> Disponible en App Store</span>
-                        <a href="https://apps.apple.com/mx/app/aerial-logbook/id6789578413" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-indigo-600/10 hover:bg-indigo-600 text-indigo-400 hover:text-white text-xs font-semibold transition-all border border-indigo-500/20 flex items-center gap-1.5">
-                            Ver App <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    <div class="pt-4 border-t border-editorial-border flex items-center justify-between">
+                        <span class="text-xs text-editorial-muted">App Store</span>
+                        <a href="https://apps.apple.com/mx/app/aerial-logbook/id6789578413" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-zinc-200 hover:text-white flex items-center gap-1.5 transition-colors">
+                            Explorar <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                         </a>
                     </div>
-                </div>
+                </article>
 
                 <!-- Card 2: Calendario Aéreo -->
-                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 glow-effect group">
+                <article class="bg-editorial-surface border border-editorial-border hover:border-editorial-borderHover rounded-xl p-5 flex flex-col justify-between transition-colors group">
                     <div>
-                        <div class="w-full h-48 rounded-xl bg-gray-900 border border-brand-border overflow-hidden mb-5 relative flex items-center justify-center group-hover:border-indigo-500/50 transition-colors">
-                            <img src="calendario aereo.jpg" alt="Calendario Aéreo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null;this.src='https://placehold.co/600x400/12141c/6366f1?text=Calendario+Aereo'">
-                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-lg text-xs font-semibold bg-brand-dark/80 backdrop-blur text-indigo-400 border border-brand-border">
+                        <div class="w-full h-44 rounded-lg bg-zinc-950 border border-editorial-border overflow-hidden mb-5 relative">
+                            <img src="calendario aereo.jpg" alt="Calendario Aéreo" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500" onerror="this.onerror=null;this.src='https://placehold.co/600x400/0f0f12/a1a1aa?text=Calendario+Aereo'">
+                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded text-[11px] font-medium tracking-wide bg-editorial-bg/90 text-zinc-300 border border-editorial-border">
                                 iOS
                             </span>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Calendario Aéreo</h3>
-                        <p class="text-sm text-gray-400 mb-6 line-clamp-3">
-                            Organiza turnos de danza aérea, clases, entrenamientos, competencias y recordatorios inteligentes.
+                        <h3 class="text-lg font-semibold text-white mb-2">Calendario Aéreo</h3>
+                        <p class="text-sm text-editorial-muted font-light leading-relaxed mb-6 line-clamp-3">
+                            Gestión estructurada de turnos de danza aérea, clases, entrenamientos, competencias y recordatorios.
                         </p>
                     </div>
-                    <div class="pt-4 border-t border-brand-border flex items-center justify-between">
-                        <span class="text-xs text-indigo-400 font-medium"><i class="fa-solid fa-circle-check mr-1"></i> Disponible en App Store</span>
-                        <a href="https://apps.apple.com/mx/app/calendario-aereo/id6794623381" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-indigo-600/10 hover:bg-indigo-600 text-indigo-400 hover:text-white text-xs font-semibold transition-all border border-indigo-500/20 flex items-center gap-1.5">
-                            Ver App <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    <div class="pt-4 border-t border-editorial-border flex items-center justify-between">
+                        <span class="text-xs text-editorial-muted">App Store</span>
+                        <a href="https://apps.apple.com/mx/app/calendario-aereo/id6794623381" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-zinc-200 hover:text-white flex items-center gap-1.5 transition-colors">
+                            Explorar <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                         </a>
                     </div>
-                </div>
+                </article>
 
                 <!-- Card 3: HabitPulse -->
-                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 glow-effect group">
+                <article class="bg-editorial-surface border border-editorial-border hover:border-editorial-borderHover rounded-xl p-5 flex flex-col justify-between transition-colors group">
                     <div>
-                        <div class="w-full h-48 rounded-xl bg-gray-900 border border-brand-border overflow-hidden mb-5 relative flex items-center justify-center group-hover:border-indigo-500/50 transition-colors">
-                            <img src="portada.jpg" alt="HabitPulse" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null;this.src='https://placehold.co/600x400/12141c/6366f1?text=HabitPulse+iOS'">
-                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-lg text-xs font-semibold bg-brand-dark/80 backdrop-blur text-indigo-400 border border-brand-border">
-                                iOS / WatchOS
+                        <div class="w-full h-44 rounded-lg bg-zinc-950 border border-editorial-border overflow-hidden mb-5 relative">
+                            <img src="portada.jpg" alt="HabitPulse" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500" onerror="this.onerror=null;this.src='https://placehold.co/600x400/0f0f12/a1a1aa?text=HabitPulse'">
+                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded text-[11px] font-medium tracking-wide bg-editorial-bg/90 text-zinc-300 border border-editorial-border">
+                                iOS · watchOS
                             </span>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">HabitPulse</h3>
-                        <p class="text-sm text-gray-400 mb-6 line-clamp-3">
-                            Construye mejores hábitos y rastrea tus metas diarias con estadísticas detalladas, widgets interactivos y notificaciones personalizadas.
+                        <h3 class="text-lg font-semibold text-white mb-2">HabitPulse</h3>
+                        <p class="text-sm text-editorial-muted font-light leading-relaxed mb-6 line-clamp-3">
+                            Seguimiento de hábitos y objetivos diarios mediante métricas claras, widgets interactivos y notificaciones.
                         </p>
                     </div>
-                    <div class="pt-4 border-t border-brand-border flex items-center justify-between">
-                        <span class="text-xs text-indigo-400 font-medium"><i class="fa-solid fa-circle-check mr-1"></i> Disponible en App Store</span>
-                        <a href="https://apps.apple.com/mx/app/habitpulse/id6796138925" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-indigo-600/10 hover:bg-indigo-600 text-indigo-400 hover:text-white text-xs font-semibold transition-all border border-indigo-500/20 flex items-center gap-1.5">
-                            Ver App <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    <div class="pt-4 border-t border-editorial-border flex items-center justify-between">
+                        <span class="text-xs text-editorial-muted">App Store</span>
+                        <a href="https://apps.apple.com/mx/app/habitpulse/id6796138925" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-zinc-200 hover:text-white flex items-center gap-1.5 transition-colors">
+                            Explorar <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                         </a>
                     </div>
-                </div>
+                </article>
 
                 <!-- Card 4: 3 en raya -->
-                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 glow-effect group">
+                <article class="bg-editorial-surface border border-editorial-border hover:border-editorial-borderHover rounded-xl p-5 flex flex-col justify-between transition-colors group">
                     <div>
-                        <div class="w-full h-48 rounded-xl bg-gray-900 border border-brand-border overflow-hidden mb-5 relative flex items-center justify-center group-hover:border-indigo-500/50 transition-colors">
-                            <img src="3 3n ralla.jpg" alt="3 en raya" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null;this.src='https://placehold.co/600x400/12141c/6366f1?text=3+en+raya'">
-                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-lg text-xs font-semibold bg-brand-dark/80 backdrop-blur text-indigo-400 border border-brand-border">
+                        <div class="w-full h-44 rounded-lg bg-zinc-950 border border-editorial-border overflow-hidden mb-5 relative">
+                            <img src="3 3n ralla.jpg" alt="3 en raya" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500" onerror="this.onerror=null;this.src='https://placehold.co/600x400/0f0f12/a1a1aa?text=3+en+raya'">
+                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded text-[11px] font-medium tracking-wide bg-editorial-bg/90 text-zinc-300 border border-editorial-border">
                                 iOS
                             </span>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">3 en raya</h3>
-                        <p class="text-sm text-gray-400 mb-6 line-clamp-3">
-                            App creada de juegos básicos.
+                        <h3 class="text-lg font-semibold text-white mb-2">3 en raya</h3>
+                        <p class="text-sm text-editorial-muted font-light leading-relaxed mb-6 line-clamp-3">
+                            Implementación clásica del juego de estrategia rápida con interfaz limpia y partidas inmediatas.
                         </p>
                     </div>
-                    <div class="pt-4 border-t border-brand-border flex items-center justify-between">
-                        <span class="text-xs text-indigo-400 font-medium"><i class="fa-solid fa-circle-check mr-1"></i> Disponible en App Store</span>
-                        <a href="https://apps.apple.com/mx/app/3-en-raya/id6799328625" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-indigo-600/10 hover:bg-indigo-600 text-indigo-400 hover:text-white text-xs font-semibold transition-all border border-indigo-500/20 flex items-center gap-1.5">
-                            Ver App <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    <div class="pt-4 border-t border-editorial-border flex items-center justify-between">
+                        <span class="text-xs text-editorial-muted">App Store</span>
+                        <a href="https://apps.apple.com/mx/app/3-en-raya/id6799328625" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-zinc-200 hover:text-white flex items-center gap-1.5 transition-colors">
+                            Explorar <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                         </a>
                     </div>
-                </div>
+                </article>
 
                 <!-- Card 5: Asistencia -->
-                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 glow-effect group">
+                <article class="bg-editorial-surface border border-editorial-border hover:border-editorial-borderHover rounded-xl p-5 flex flex-col justify-between transition-colors group">
                     <div>
-                        <div class="w-full h-48 rounded-xl bg-gray-900 border border-brand-border overflow-hidden mb-5 relative flex items-center justify-center group-hover:border-indigo-500/50 transition-colors">
-                            <img src="presente app.jpg" alt="Asistencia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null;this.src='https://placehold.co/600x400/12141c/6366f1?text=Asistencia'">
-                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-lg text-xs font-semibold bg-brand-dark/80 backdrop-blur text-indigo-400 border border-brand-border">
+                        <div class="w-full h-44 rounded-lg bg-zinc-950 border border-editorial-border overflow-hidden mb-5 relative">
+                            <img src="presente app.jpg" alt="Asistencia" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500" onerror="this.onerror=null;this.src='https://placehold.co/600x400/0f0f12/a1a1aa?text=Asistencia'">
+                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded text-[11px] font-medium tracking-wide bg-editorial-bg/90 text-zinc-300 border border-editorial-border">
                                 iOS
                             </span>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Asistencia</h3>
-                        <p class="text-sm text-gray-400 mb-6 line-clamp-3">
-                            App creada para profesores, para que lleven mejor el registro de sus alumnos.
+                        <h3 class="text-lg font-semibold text-white mb-2">Asistencia</h3>
+                        <p class="text-sm text-editorial-muted font-light leading-relaxed mb-6 line-clamp-3">
+                            Herramienta administrativa para docentes e instructores enfocada en el control puntual de alumnos y grupos.
                         </p>
                     </div>
-                    <div class="pt-4 border-t border-brand-border flex items-center justify-between">
-                        <span class="text-xs text-indigo-400 font-medium"><i class="fa-solid fa-circle-check mr-1"></i> Disponible en App Store</span>
-                        <a href="https://apps.apple.com/mx/app/asistencia/id6808775944" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-indigo-600/10 hover:bg-indigo-600 text-indigo-400 hover:text-white text-xs font-semibold transition-all border border-indigo-500/20 flex items-center gap-1.5">
-                            Ver App <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    <div class="pt-4 border-t border-editorial-border flex items-center justify-between">
+                        <span class="text-xs text-editorial-muted">App Store</span>
+                        <a href="https://apps.apple.com/mx/app/asistencia/id6808775944" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-zinc-200 hover:text-white flex items-center gap-1.5 transition-colors">
+                            Explorar <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                         </a>
                     </div>
-                </div>
+                </article>
 
                 <!-- Card 6: Mente Sana -->
-                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 glow-effect group">
+                <article class="bg-editorial-surface border border-editorial-border hover:border-editorial-borderHover rounded-xl p-5 flex flex-col justify-between transition-colors group">
                     <div>
-                        <div class="w-full h-48 rounded-xl bg-gray-900 border border-brand-border overflow-hidden mb-5 relative flex items-center justify-center group-hover:border-indigo-500/50 transition-colors">
-                            <img src="mente sana.jpg" alt="Mente Sana" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null;this.src='https://placehold.co/600x400/12141c/6366f1?text=Mente+Sana'">
-                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-lg text-xs font-semibold bg-brand-dark/80 backdrop-blur text-indigo-400 border border-brand-border">
+                        <div class="w-full h-44 rounded-lg bg-zinc-950 border border-editorial-border overflow-hidden mb-5 relative">
+                            <img src="mente sana.jpg" alt="Mente Sana" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500" onerror="this.onerror=null;this.src='https://placehold.co/600x400/0f0f12/a1a1aa?text=Mente+Sana'">
+                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded text-[11px] font-medium tracking-wide bg-editorial-bg/90 text-zinc-300 border border-editorial-border">
                                 iOS
                             </span>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Mente Sana</h3>
-                        <p class="text-sm text-gray-400 mb-6 line-clamp-3">
-                            App para psicólogos, para que lleven registros de sus pacientes.
+                        <h3 class="text-lg font-semibold text-white mb-2">Mente Sana</h3>
+                        <p class="text-sm text-editorial-muted font-light leading-relaxed mb-6 line-clamp-3">
+                            Sistema de organización clínica diseñado para profesionales de la psicología y el seguimiento de expedientes.
                         </p>
                     </div>
-                    <div class="pt-4 border-t border-brand-border flex items-center justify-between">
-                        <span class="text-xs text-indigo-400 font-medium"><i class="fa-solid fa-circle-check mr-1"></i> Disponible en App Store</span>
-                        <a href="https://apps.apple.com/mx/app/mente-sana/id6798071037" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-indigo-600/10 hover:bg-indigo-600 text-indigo-400 hover:text-white text-xs font-semibold transition-all border border-indigo-500/20 flex items-center gap-1.5">
-                            Ver App <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    <div class="pt-4 border-t border-editorial-border flex items-center justify-between">
+                        <span class="text-xs text-editorial-muted">App Store</span>
+                        <a href="https://apps.apple.com/mx/app/mente-sana/id6798071037" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-zinc-200 hover:text-white flex items-center gap-1.5 transition-colors">
+                            Explorar <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                         </a>
                     </div>
-                </div>
+                </article>
 
                 <!-- Card 7: Luna Player -->
-                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 glow-effect group">
+                <article class="bg-editorial-surface border border-editorial-border hover:border-editorial-borderHover rounded-xl p-5 flex flex-col justify-between transition-colors group">
                     <div>
-                        <div class="w-full h-48 rounded-xl bg-gray-900 border border-brand-border overflow-hidden mb-5 relative flex items-center justify-center group-hover:border-indigo-500/50 transition-colors">
-                            <img src="player.png" alt="Luna Player" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null;this.src='https://placehold.co/600x400/12141c/6366f1?text=Luna+Player'">
-                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-lg text-xs font-semibold bg-brand-dark/80 backdrop-blur text-indigo-400 border border-brand-border">
+                        <div class="w-full h-44 rounded-lg bg-zinc-950 border border-editorial-border overflow-hidden mb-5 relative">
+                            <img src="player.png" alt="Luna Player" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500" onerror="this.onerror=null;this.src='https://placehold.co/600x400/0f0f12/a1a1aa?text=Luna+Player'">
+                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded text-[11px] font-medium tracking-wide bg-editorial-bg/90 text-zinc-300 border border-editorial-border">
                                 iOS
                             </span>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Luna Player</h3>
-                        <p class="text-sm text-gray-400 mb-6 line-clamp-3">
-                            App de música, para que lleves tu música a todos lados.
+                        <h3 class="text-lg font-semibold text-white mb-2">Luna Player</h3>
+                        <p class="text-sm text-editorial-muted font-light leading-relaxed mb-6 line-clamp-3">
+                            Reproductor de audio local diseñado para una reproducción fluida, ligera y libre de distracciones.
                         </p>
                     </div>
-                    <div class="pt-4 border-t border-brand-border flex items-center justify-between">
-                        <span class="text-xs text-indigo-400 font-medium"><i class="fa-solid fa-circle-check mr-1"></i> Disponible en App Store</span>
-                        <a href="https://apps.apple.com/mx/app/luna-player/id6834640777" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-indigo-600/10 hover:bg-indigo-600 text-indigo-400 hover:text-white text-xs font-semibold transition-all border border-indigo-500/20 flex items-center gap-1.5">
-                            Ver App <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    <div class="pt-4 border-t border-editorial-border flex items-center justify-between">
+                        <span class="text-xs text-editorial-muted">App Store</span>
+                        <a href="https://apps.apple.com/mx/app/luna-player/id6834640777" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-zinc-200 hover:text-white flex items-center gap-1.5 transition-colors">
+                            Explorar <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                         </a>
                     </div>
-                </div>
+                </article>
 
             </div>
         </section>
 
-        <!-- SECCIÓN ANDROID -->
-        <section id="android" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center gap-3 mb-10 pb-4 border-b border-brand-border">
-                <div class="w-12 h-12 rounded-2xl bg-gray-800/80 border border-gray-700 flex items-center justify-center text-green-400 text-2xl shadow-inner">
-                    <i class="fa-brands fa-android"></i>
-                </div>
+        <!-- 02 · SECCIÓN ANDROID -->
+        <section id="android" class="py-20 max-w-6xl mx-auto px-6">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
                 <div>
-                    <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Apps de Android</h2>
-                    <p class="text-sm text-gray-400">Optimizadas para dispositivos móviles y tablets Android</p>
+                    <span class="text-xs font-mono uppercase tracking-widest text-editorial-muted block mb-2">02 / Ecosistema Android</span>
+                    <h2 class="text-2xl sm:text-3xl font-semibold text-white tracking-tight">Aplicaciones para Android</h2>
                 </div>
+                <p class="text-sm text-editorial-muted">Disponible en Google Play</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 <!-- Aerial LogBook Android -->
-                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 glow-effect group hover:border-green-500/40">
+                <article class="bg-editorial-surface border border-editorial-border hover:border-editorial-borderHover rounded-xl p-5 flex flex-col justify-between transition-colors group">
                     <div>
-                        <div class="w-full h-48 rounded-xl bg-gray-900 border border-brand-border overflow-hidden mb-5 relative flex items-center justify-center group-hover:border-green-500/50 transition-colors">
+                        <div class="w-full h-44 rounded-lg bg-zinc-950 border border-editorial-border overflow-hidden mb-5 relative">
                             <img
                                 src="aerial logbook.jpg"
                                 alt="Aerial LogBook Android"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/12141c/22c55e?text=Aerial+LogBook+Android'"
+                                class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/0f0f12/a1a1aa?text=Aerial+LogBook'"
                             >
-                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-lg text-xs font-semibold bg-brand-dark/80 backdrop-blur text-green-400 border border-brand-border">
-                                <i class="fa-brands fa-android mr-1"></i>
+                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded text-[11px] font-medium tracking-wide bg-editorial-bg/90 text-zinc-300 border border-editorial-border">
                                 Android
                             </span>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors">
-                            Aerial LogBook
-                        </h3>
-                        <p class="text-sm text-gray-400 mb-6 line-clamp-3">
-                            Tu diario de danza aérea en Android. Registra tu experiencia, entrenamientos y evolución. Lleva contigo tu bitácora aérea y conserva tus recuerdos de cada entrenamiento.
+                        <h3 class="text-lg font-semibold text-white mb-2">Aerial LogBook</h3>
+                        <p class="text-sm text-editorial-muted font-light leading-relaxed mb-6 line-clamp-3">
+                            Tu diario de danza aérea en Android. Registra tu experiencia, entrenamientos y evolución técnica en cada sesión.
                         </p>
                     </div>
-                    <div class="pt-4 border-t border-brand-border flex items-center justify-between gap-3">
-                        <span class="text-xs text-green-400 font-medium">
-                            <i class="fa-solid fa-circle-check mr-1"></i>
-                            Google Play
-                        </span>
+                    <div class="pt-4 border-t border-editorial-border flex items-center justify-between">
+                        <span class="text-xs text-editorial-muted">Google Play</span>
                         <a
                             href="https://play.google.com/store/apps/details?id=com.blackmoonlabs.aeriallogbook"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="px-4 py-2 rounded-xl bg-green-600/10 hover:bg-green-600 text-green-400 hover:text-white text-xs font-semibold transition-all border border-green-500/20 flex items-center gap-1.5 whitespace-nowrap"
+                            class="text-xs font-medium text-zinc-200 hover:text-white flex items-center gap-1.5 transition-colors"
                         >
-                            Ver App
-                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            Explorar <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                         </a>
                     </div>
-                </div>
-
-                <!-- Próximamente Android -->
-                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:border-green-500/40 glow-effect group">
-                    <div>
-                        <div class="w-full h-48 rounded-xl bg-gray-900 border border-brand-border overflow-hidden mb-5 relative flex items-center justify-center group-hover:border-green-500/50 transition-colors">
-                            <img src="portada.jpg" alt="Próximamente en Android" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null;this.src='https://placehold.co/600x400/12141c/22c55e?text=Proximamente+Android'">
-                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-lg text-xs font-semibold bg-brand-dark/80 backdrop-blur text-green-400 border border-brand-border">
-                                Android
-                            </span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors">Próximamente</h3>
-                        <p class="text-sm text-gray-400 mb-6 line-clamp-3">
-                            Más aplicaciones del ecosistema Blackmoon llegarán muy pronto a Google Play Store. ¡Mantente atento a las novedades!
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-brand-border flex items-center justify-between">
-                        <span class="text-xs text-green-400 font-medium"><i class="fa-solid fa-clock mr-1"></i> En desarrollo</span>
-                        <span class="px-4 py-2 rounded-xl bg-green-600/10 text-green-400 text-xs font-semibold border border-green-500/20">
-                            Pronto
-                        </span>
-                    </div>
-                </div>
+                </article>
 
             </div>
         </section>
     </main>
 
-    <footer id="contacto" class="border-t border-brand-border py-8 text-center text-xs text-gray-500">
-        <p>&copy; 2026 Blackmoon. Todos los derechos reservados by Ing. Charly Blackmoon.</p>
+    <!-- Pie de página sobrio -->
+    <footer id="contacto" class="border-t border-editorial-border py-10">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-editorial-muted">
+            <p>&copy; 2026 Blackmoon Labs · Grupo Blackmoon. Todos los derechos reservados.</p>
+            <p>Desarrollado por Ing. Charly Blackmoon</p>
+        </div>
     </footer>
 
 </body>
