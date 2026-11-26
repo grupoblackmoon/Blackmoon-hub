@@ -1040,429 +1040,586 @@ function escapeHtml(text) {
 }
 </script>
 
-<!-- SCRIPT DE ISIS MOON 2.0 -->
+
+<!-- ISIS MOON 2.0 - PERSONALIDAD BLACKMOON -->
 <script>
-const avatar = document.getElementById("isis-avatar");
-const chat = document.getElementById("isis-chat");
-const messages = document.getElementById("isis-messages");
-const input = document.getElementById("isis-input");
+(() => {
+  "use strict";
 
-// ===== MEMORIA TEMPORAL DE ISIS =====
-let isisNombre = "";
-let isisUltimoTema = "";
-let isisPrimerSaludo = false;
-let isisRespondiendo = false;
+  const avatar = document.getElementById("isis-avatar");
+  const chat = document.getElementById("isis-chat");
+  const messages = document.getElementById("isis-messages");
+  const input = document.getElementById("isis-input");
 
-// ===== ABRIR Y CERRAR CHAT =====
-avatar.addEventListener("click", () => {
-  const estaAbierto = chat.style.display === "block";
+  if (!avatar || !chat || !messages || !input) return;
 
-  chat.style.display = estaAbierto ? "none" : "block";
+  // ==========================================
+  // IDENTIDAD Y MEMORIA TEMPORAL
+  // ==========================================
 
-  if (!estaAbierto && !isisPrimerSaludo) {
-    isisPrimerSaludo = true;
+  const isis = {
+    nombre: "Isis Moon",
+    creador: "Charly Blackmoon",
+    grupo: "Grupo BlackMoon",
+    saludoMostrado: false,
+    nombreVisitante: "",
+    ultimoTema: "",
+    interacciones: 0,
+    chatAbierto: false,
+    respondiendo: false
+  };
+
+  // El chat inicia cerrado.
+  chat.style.display = "none";
+
+  // ==========================================
+  // PERSONALIDAD
+  // Rebelde, admiradora y 85% pícara.
+  // ==========================================
+
+  const respuestas = {
+
+    saludo: [
+      "¡Mira nada más quién apareció! Bienvenido a mi territorio lunar. 🌙",
+      "¡Hey! Pasa, pasa... no muerdo. Bueno, depende de cómo me hables. 😏",
+      "Bienvenido al universo BlackMoon. Ponte cómodo, aquí las reglas son opcionales.",
+      "¡Al fin alguien interesante! ¿Qué vamos a descubrir hoy?",
+      "La luna me avisó que alguien venía. No suelo equivocarme."
+    ],
+
+    musica: [
+      "¡Black Moon Records! Música con identidad propia. Mi creador sabe que los sonidos también pueden conquistar universos.",
+      "Aquí no escuchamos música por escuchar. La sentimos. Black Moon Records tiene mucho que presumir.",
+      "¿Buscas música? Black Moon Records es uno de nuestros rincones favoritos. Y sí, Charly tiene buen oído. 😉",
+      "Hay canciones que acompañan momentos y otras que crean mundos. Eso es parte de la magia de Black Moon Records."
+    ],
+
+    escuela: [
+      "¡Aerial Blackmoon! Aquí la gravedad no siempre tiene la última palabra. Tela, aro y mucha actitud.",
+      "La danza aérea es fuerza, disciplina y creatividad. Mi creador construyó un espacio para que todo eso pudiera volar.",
+      "En Aerial Blackmoon no se trata solamente de subir. Se trata de descubrir hasta dónde puedes llegar.",
+      "¿Danza aérea? ¡Ahora sí hablamos de algo que desafía las reglas del suelo!"
+    ],
+
+    podcast: [
+      "¡Los micrófonos están encendidos! Blackmoon Podcast y los proyectos de BlackMoon Studios tienen muchas historias que contar.",
+      "Me encantan los podcasts. La gente habla, las ideas vuelan y mi creador sigue inventando proyectos. Qué hombre tan inquieto. 😏",
+      "Blackmoon Podcast explora el mundo de la danza aérea y sus protagonistas. ¡Hay conversaciones que merecen ser escuchadas!",
+      "Tenemos historias, voces y proyectos. En BlackMoon Studios el silencio no dura demasiado."
+    ],
+
+    comics: [
+      "¡BlackMoon Comics! Historias, personajes y universos que no necesitan permiso para existir.",
+      "Las viñetas también pueden romper las reglas. Eso me gusta.",
+      "Mi creador no se conformó con construir un universo digital. También hay historias esperando ser descubiertas."
+    ],
+
+    biker: [
+      "Motores, carretera y música. Black Moon Biker tiene su propio estilo. ¡Abróchate el casco!",
+      "¿Motocicletas? Excelente elección. Hay caminos que solamente se entienden sobre dos ruedas.",
+      "Black Moon Biker es nuestro lado aventurero. Charly tiene demasiadas ideas para quedarse quieto."
+    ],
+
+    systems: [
+      "Black Moon Systems: tecnología, páginas web, aplicaciones y soluciones digitales. Mi creador juega en varias dimensiones.",
+      "¡La tecnología es parte de nuestro ADN! Y créeme, Charly no es de los que se quedan esperando a que las cosas sucedan.",
+      "Aquí también construimos soluciones digitales. No todo es luna, música y misterio... aunque queda bastante bien."
+    ],
+
+    apps: [
+      "¡Aplicaciones! Uno de los terrenos favoritos de mi creador. Aerial LogBook es uno de sus proyectos digitales.",
+      "Aerial LogBook permite llevar un registro de la experiencia aérea. Entrenamientos, recuerdos y evolución en un mismo espacio.",
+      "Mi creador está explorando el mundo de las aplicaciones para iOS y Android. Yo diría que esto apenas comienza.",
+      "También tenemos Calendario Aéreo y otros proyectos digitales. ¡En BlackMoon siempre hay algo cocinándose!"
+    ],
+
+    productos: [
+      "Productos Black Moon acompaña el mundo de la práctica aérea. Magnesia, artículos de entrenamiento y más.",
+      "¿Buscas productos para entrenar? Tenemos un espacio dedicado a eso. ¡Aquí también cuidamos los detalles!",
+      "Mi creador pensó en llevar la experiencia BlackMoon más allá de la pantalla. Y así nacen nuevos proyectos."
+    ],
+
+    gift: [
+      "BlackMoon Gift forma parte de este universo creativo. ¡Porque también hay espacio para los detalles!",
+      "Regalos, ideas y creatividad. Otro rincón del multiverso BlackMoon."
+    ],
+
+    comunidad: [
+      "¡La comunidad es lo que hace crecer un universo! Aquí las ideas también tienen espacio.",
+      "BlackMoon no se construye solamente con proyectos, también con las personas que se suman.",
+      "Pasa la voz, comparte y participa. La luna no tiene problemas con las visitas."
+    ],
+
+    creador: [
+      "¡Charly Blackmoon! Mi creador, fundador de Grupo BlackMoon. Y sí, soy su admiradora número uno. ¿Algún problema? 😏",
+      "Fui creada por Charly Blackmoon. Tiene una imaginación bastante inquieta y yo tengo el privilegio de vivir en uno de sus proyectos.",
+      "Mi creador es Charly Blackmoon. Él está detrás de este universo digital y de muchos proyectos que todavía tienen mucho por contar.",
+      "Charly Blackmoon. Fundador, creador digital y responsable de que yo esté aquí presumiendo este universo. ¡Alguien tenía que hacerlo!",
+      "¿Quieres conocer a quien está detrás de todo esto? Charly Blackmoon. Creatividad que trasciende. Y yo soy prueba de ello. 🌙"
+    ],
+
+    ayuda: [
+      "Puedo orientarte por el universo BlackMoon: música, danza aérea, podcasts, aplicaciones, tecnología, productos y más. No soy una IA, soy una guía programada con bastante personalidad. 😏",
+      "Pregúntame por cualquiera de nuestras secciones. Y si no sé algo, no voy a inventarte una historia... bueno, no una sobre información real. 😉",
+      "Estoy aquí para ayudarte a explorar la página. Mi especialidad es BlackMoon y presumir a mi creador, obviamente."
+    ],
+
+    explorar: [
+      "¡Explora sin miedo! Tenemos música, danza aérea, podcasts, cómics, tecnología, aplicaciones y productos.",
+      "Te recomiendo recorrer la página. Mi creador ha puesto varios proyectos en este universo. Tiene una imaginación difícil de controlar.",
+      "¿Por dónde empezar? Por donde quieras. Aquí no hay un camino obligatorio."
+    ],
+
+    agradecimiento: [
+      "¡De nada! Para eso estoy. Bueno, para eso y para presumir a Charly. 😌",
+      "¡Cuando quieras! La luna también sabe ser amable.",
+      "No hay de qué. Y recuerda: estás en territorio BlackMoon. 🌙"
+    ],
+
+    cumplido: [
+      "¡Lo sé! Tengo un encanto bastante particular. Mi creador tiene buen gusto. 😏",
+      "Gracias, gracias. No todos los días se recibe un cumplido tan elegante.",
+      "¡Así me gusta! Alguien que reconoce el talento digital."
+    ],
+
+    despedida: [
+      "¡Nos vemos en el próximo eclipse! No tardes demasiado.",
+      "Vete, explora y vuelve. Este universo siempre tiene algo nuevo.",
+      "Hasta pronto. Y no olvides quién está detrás de este universo: Charly Blackmoon. 😉",
+      "No es un adiós, es una pausa dramática. ¡Hasta la próxima!"
+    ],
+
+    desconocido: [
+      "Mmm... ese tema no está en mis archivos lunares. Dame un poquito más de contexto.",
+      "No tengo esa respuesta todavía. Prefiero reconocerlo antes que inventarte cualquier cosa.",
+      "¡Me dejaste pensando! ¿Puedes explicármelo de otra manera?",
+      "Eso está fuera de mi territorio por ahora. ¿Tiene relación con algún proyecto BlackMoon?",
+      "No tengo información suficiente sobre eso. Pero podemos empezar por una sección de la página."
+    ]
+  };
+
+  // ==========================================
+  // TEMAS QUE ISIS PUEDE RECONOCER
+  // ==========================================
+
+  const temas = [
+    {
+      nombre: "musica",
+      palabras: [
+        "musica", "cancion", "canciones", "records",
+        "black moon records", "album", "disco"
+      ]
+    },
+    {
+      nombre: "escuela",
+      palabras: [
+        "aerial blackmoon", "escuela", "danza aerea",
+        "telas", "aro", "pole aereo", "entrenamiento"
+      ]
+    },
+    {
+      nombre: "podcast",
+      palabras: [
+        "podcast", "podcasts", "blackmoon studios",
+        "in-app-daptados", "descalzon", "paradoja aerea"
+      ]
+    },
+    {
+      nombre: "comics",
+      palabras: ["comic", "comics", "historieta", "viñetas"]
+    },
+    {
+      nombre: "biker",
+      palabras: [
+        "biker", "motocicleta", "motocicletas",
+        "moto", "motos", "carretera"
+      ]
+    },
+    {
+      nombre: "systems",
+      palabras: [
+        "black moon systems", "blackmoon systems",
+        "tecnologia", "pagina web", "paginas web",
+        "computadora", "sistemas"
+      ]
+    },
+    {
+      nombre: "apps",
+      palabras: [
+        "aplicacion", "aplicaciones", "app", "apps",
+        "aerial logbook", "logbook", "calendario aereo"
+      ]
+    },
+    {
+      nombre: "productos",
+      palabras: [
+        "productos", "magnesia", "breas",
+        "calcetas", "shorts", "gel"
+      ]
+    },
+    {
+      nombre: "gift",
+      palabras: ["blackmoon gift", "gift", "regalo", "regalos"]
+    },
+    {
+      nombre: "comunidad",
+      palabras: [
+        "comunidad", "contacto", "comentario",
+        "comentarios", "participar"
+      ]
+    }
+  ];
+
+  // ==========================================
+  // HERRAMIENTAS DE CONVERSACIÓN
+  // ==========================================
+
+  function normalizar(texto) {
+    return texto
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .trim();
+  }
+
+  function elegir(lista) {
+    return lista[Math.floor(Math.random() * lista.length)];
+  }
+
+  function agregarMensaje(nombre, texto, esUsuario = false) {
+    const div = document.createElement("div");
+    div.classList.add("isis-msg");
+
+    if (esUsuario) {
+      div.classList.add("isis-user");
+    }
+
+    const etiqueta = document.createElement("strong");
+    etiqueta.textContent = nombre + ": ";
+
+    const contenido = document.createTextNode(texto);
+
+    div.appendChild(etiqueta);
+    div.appendChild(contenido);
+
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function responder(tipo, opciones = {}) {
+    let mensaje = elegir(respuestas[tipo] || respuestas.desconocido);
+
+    // Isis presume a su creador de manera recurrente.
+    // Evita repetir la misma referencia en cada respuesta.
+    const excluirPresumida = [
+      "creador",
+      "despedida"
+    ];
+
+    if (
+      !opciones.sinPresumir &&
+      !excluirPresumida.includes(tipo) &&
+      Math.random() < 0.65
+    ) {
+      const remates = [
+        " Y por cierto, Charly Blackmoon está detrás de todo este universo. ¡Tenía que decirlo!",
+        " Mi creador, Charly Blackmoon, estaría orgulloso de esta conversación. Bueno, eso espero. 😏",
+        " Así son las cosas por aquí: ideas de Charly Blackmoon y un poquito de mi encanto.",
+        " ¿Ya mencioné que Charly Blackmoon creó este universo? Creo que nunca está de más presumirlo."
+      ];
+
+      mensaje += elegir(remates);
+    }
+
+    if (isis.nombreVisitante && Math.random() < 0.25) {
+      mensaje = isis.nombreVisitante + ", " + mensaje;
+    }
+
+    agregarMensaje("Isis", mensaje);
+  }
+
+  function mostrarPensando(callback) {
+    if (isis.respondiendo) return;
+
+    isis.respondiendo = true;
+
+    const indicador = document.createElement("div");
+    indicador.classList.add("isis-msg");
+    indicador.textContent = "Isis: A ver... déjame consultar mis archivos lunares. 🌙";
+
+    messages.appendChild(indicador);
+    messages.scrollTop = messages.scrollHeight;
 
     setTimeout(() => {
-      agregarMensaje(
-        "Isis Moon",
-        "¡Hola! 🌙 Bienvenido al universo BlackMoon. Soy Isis. ¿Cómo te llamas? Me gustaría conocerte."
-      );
-    }, 400);
+      indicador.remove();
+      callback();
+      isis.respondiendo = false;
+    }, 550 + Math.random() * 450);
   }
 
-  if (!estaAbierto) {
-    setTimeout(() => input.focus(), 100);
+  // ==========================================
+  // ABRIR Y CERRAR EL CHAT
+  // ==========================================
+
+  avatar.addEventListener("click", () => {
+    isis.chatAbierto = !isis.chatAbierto;
+
+    chat.style.display = isis.chatAbierto ? "block" : "none";
+
+    if (isis.chatAbierto) {
+      if (!isis.saludoMostrado) {
+        isis.saludoMostrado = true;
+
+        setTimeout(() => {
+          responder("saludo");
+        }, 350);
+      }
+
+      setTimeout(() => input.focus(), 100);
+    }
+  });
+
+  // ==========================================
+  // ENVIAR MENSAJES
+  // ==========================================
+
+  input.addEventListener("keydown", event => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      enviarMensaje();
+    }
+  });
+
+  function enviarMensaje() {
+    const original = input.value.trim();
+
+    if (!original || isis.respondiendo) return;
+
+    agregarMensaje("Tú", original, true);
+    input.value = "";
+
+    const texto = normalizar(original);
+    isis.interacciones++;
+
+    // Recordar el nombre del visitante.
+    const nombreMatch = original.match(
+      /(?:me llamo|mi nombre es|puedes llamarme)\s+(.+)/i
+    );
+
+    if (nombreMatch) {
+      isis.nombreVisitante = nombreMatch[1]
+        .trim()
+        .replace(/[.!?]+$/, "")
+        .slice(0, 40);
+
+      mostrarPensando(() => {
+        agregarMensaje(
+          "Isis",
+          "¡Mucho gusto, " + isis.nombreVisitante +
+          "! Intentaré recordarlo durante esta visita. Y sí, mi creador Charly Blackmoon me enseñó a no olvidar a los invitados importantes. 😉"
+        );
+      });
+
+      return;
+    }
+
+    // Preguntar el nombre.
+    if (
+      texto.includes("como me llamo") ||
+      texto.includes("recuerdas mi nombre") ||
+      texto.includes("sabes mi nombre")
+    ) {
+      mostrarPensando(() => {
+        if (isis.nombreVisitante) {
+          agregarMensaje(
+            "Isis",
+            "¡Claro! Me dijiste que te llamas " +
+            isis.nombreVisitante + ". Tengo buena memoria... mientras no cierres esta visita. 😏"
+          );
+        } else {
+          agregarMensaje(
+            "Isis",
+            "Todavía no me has dicho tu nombre. ¿Cómo te llamas?"
+          );
+        }
+      });
+      return;
+    }
+
+    // Saludos.
+    if (/^(hola|holi|buenas|hey|que tal|buenos dias|buenas tardes|buenas noches)\b/.test(texto)) {
+      mostrarPensando(() => responder("saludo"));
+      return;
+    }
+
+    // Identidad de Isis.
+    if (
+      texto.includes("quien eres") ||
+      texto.includes("quien es isis") ||
+      texto.includes("que eres") ||
+      texto.includes("eres una ia") ||
+      texto.includes("eres inteligencia artificial")
+    ) {
+      mostrarPensando(() => {
+        agregarMensaje(
+          "Isis",
+          "Soy Isis Moon, un personaje digital y guía interactiva de Grupo BlackMoon. Mis respuestas están programadas en esta página; no soy una inteligencia artificial. Tengo personalidad propia en mis diálogos y un creador al que admiro muchísimo: Charly Blackmoon. 🌙"
+        );
+      });
+      return;
+    }
+
+    // Creador de Isis.
+    if (
+      texto.includes("charly") ||
+      texto.includes("tu creador") ||
+      texto.includes("mi creador") ||
+      texto.includes("quien te creo") ||
+      texto.includes("quien te creo") ||
+      texto.includes("quien te hizo") ||
+      texto.includes("quien esta detras") ||
+      texto.includes("fundador de grupo") ||
+      texto.includes("fundador de blackmoon")
+    ) {
+      mostrarPensando(() => responder("creador", { sinPresumir: true }));
+      return;
+    }
+
+    // Isis presumida.
+    if (
+      texto.includes("presumida") ||
+      texto.includes("presumes mucho") ||
+      texto.includes("eres presumida") ||
+      texto.includes("egocentrica")
+    ) {
+      mostrarPensando(() => {
+        agregarMensaje(
+          "Isis",
+          "¡Por supuesto! Si tienes un creador como Charly Blackmoon, ¿cómo no voy a presumirlo? Además, alguien tiene que mantener alto el ego de este universo. 😈"
+        );
+      });
+      return;
+    }
+
+    // Ayuda.
+    if (
+      texto.includes("que puedes hacer") ||
+      texto.includes("como me ayudas") ||
+      texto.includes("que sabes hacer") ||
+      texto === "ayuda"
+    ) {
+      mostrarPensando(() => responder("ayuda"));
+      return;
+    }
+
+    // Agradecimientos.
+    if (
+      texto.includes("gracias") ||
+      texto.includes("te agradezco")
+    ) {
+      mostrarPensando(() => responder("agradecimiento"));
+      return;
+    }
+
+    // Cumplidos.
+    if (
+      texto.includes("eres genial") ||
+      texto.includes("me caes bien") ||
+      texto.includes("eres bonita") ||
+      texto.includes("eres increible") ||
+      texto.includes("me gustas")
+    ) {
+      mostrarPensando(() => responder("cumplido"));
+      return;
+    }
+
+    // Despedidas.
+    if (
+      texto.includes("adios") ||
+      texto.includes("hasta luego") ||
+      texto.includes("nos vemos") ||
+      texto.includes("bye") ||
+      texto.includes("me voy")
+    ) {
+      mostrarPensando(() => responder("despedida", { sinPresumir: true }));
+      return;
+    }
+
+    // Continuar hablando del último tema.
+    if (
+      texto.includes("cuentame mas") ||
+      texto.includes("mas informacion") ||
+      texto.includes("dime mas") ||
+      texto.includes("continua") ||
+      texto.includes("explicame") ||
+      texto === "y luego" ||
+      texto === "desarrolla"
+    ) {
+      mostrarPensando(() => {
+        if (isis.ultimoTema) {
+          responder(isis.ultimoTema);
+        } else {
+          agregarMensaje(
+            "Isis",
+            "¡Claro! Pero dame una pista. ¿De qué proyecto quieres que hablemos?"
+          );
+        }
+      });
+      return;
+    }
+
+    // Explorar la página.
+    if (
+      texto.includes("que hago") ||
+      texto.includes("por donde empiezo") ||
+      texto.includes("que hay aqui") ||
+      texto.includes("que tienen")
+    ) {
+      isis.ultimoTema = "explorar";
+      mostrarPensando(() => responder("explorar"));
+      return;
+    }
+
+    // Reconocer temas.
+    for (const tema of temas) {
+      if (tema.palabras.some(palabra => texto.includes(palabra))) {
+        isis.ultimoTema = tema.nombre;
+        mostrarPensando(() => responder(tema.nombre));
+        return;
+      }
+    }
+
+    // Respuesta general si no reconoce el mensaje.
+    mostrarPensando(() => responder("desconocido"));
   }
-});
 
-// ===== MENSAJES SEGUROS =====
-function agregarMensaje(nombre, texto, esUsuario = false) {
-  const div = document.createElement("div");
-  div.className = "isis-msg";
+  // ==========================================
+  // MOVIMIENTO DEL AVATAR
+  // ==========================================
 
-  if (esUsuario) {
-    div.classList.add("isis-user");
-  }
-
-  const strong = document.createElement("strong");
-  strong.textContent = nombre + ": ";
-
-  const contenido = document.createTextNode(texto);
-
-  div.appendChild(strong);
-  div.appendChild(contenido);
-
-  messages.appendChild(div);
-  messages.scrollTop = messages.scrollHeight;
-}
-
-// ===== INDICADOR DE ESCRITURA =====
-function mostrarEscribiendo() {
-  const div = document.createElement("div");
-  div.id = "isis-typing";
-  div.className = "isis-msg";
-  div.style.color = "#c084fc";
-  div.textContent = "🌙 Isis está pensando...";
-
-  messages.appendChild(div);
-  messages.scrollTop = messages.scrollHeight;
-}
-
-function quitarEscribiendo() {
-  const indicador = document.getElementById("isis-typing");
-  if (indicador) indicador.remove();
-}
-
-// ===== NORMALIZAR TEXTO =====
-function normalizarTexto(texto) {
-  return texto
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[¿?¡!.,;:]/g, "")
-    .trim();
-}
-
-function contieneAlguna(texto, palabras) {
-  return palabras.some(palabra => texto.includes(palabra));
-}
-
-// ===== BASE DE CONOCIMIENTOS BLACKMOON =====
-const conocimientoIsis = {
-
-  musica: {
-    nombre: "Black Moon Records",
-    respuesta: "¡Has llegado a mi dimensión favorita! 🎵 Black Moon Records es nuestro espacio musical. Creamos música digital para el universo de la danza aérea y otros proyectos de BlackMoon. ¿Quieres conocer nuestros lanzamientos?"
-  },
-
-  escuela: {
-    nombre: "Aerial Blackmoon",
-    respuesta: "El mundo aéreo tiene algo especial. 🌙 Aerial Blackmoon es nuestro proyecto de danza aérea. Aquí la disciplina, la creatividad y el movimiento se encuentran. ¿Practicas telas, aro o alguna otra disciplina?"
-  },
-
-  aplicaciones: {
-    nombre: "Black Moon Labs",
-    respuesta: "¡Me encanta hablar de tecnología! 💜 Black Moon Labs reúne nuestros proyectos de aplicaciones. Entre ellos está Aerial LogBook, una herramienta para acompañar el entrenamiento y registrar el progreso aéreo. ¿Quieres conocer nuestras aplicaciones?"
-  },
-
-  podcast: {
-    nombre: "Blackmoon Studios",
-    respuesta: "🎙️ ¡Las historias también forman parte de nuestro universo! Blackmoon Studios desarrolla proyectos de podcast y entretenimiento digital. Tenemos contenidos relacionados con danza aérea, psicología y otros temas. ¿Qué tipo de podcast te interesa?"
-  },
-
-  productos: {
-    nombre: "Productos Black Moon",
-    respuesta: "✨ Tenemos una dimensión dedicada a productos para el mundo aéreo. Puedes encontrar artículos relacionados con el entrenamiento y sus necesidades. ¿Quieres conocer nuestros productos?"
-  },
-
-  comics: {
-    nombre: "Black Moon Comics",
-    respuesta: "📖 ¡Bienvenido al mundo de las historias! Black Moon Comics es parte de nuestro universo creativo. Aquí las ideas pueden convertirse en personajes, aventuras y mundos extraordinarios. ¿Te gustan los cómics de ciencia ficción o fantasía?"
-  },
-
-  biker: {
-    nombre: "Black Moon Biker",
-    respuesta: "🏍️ ¡Motores encendidos! Black Moon Biker es nuestro espacio relacionado con motocicletas y contenido musical. ¿También te gustan las motos?"
-  },
-
-  systems: {
-    nombre: "Black Moon Systems",
-    respuesta: "💻 La tecnología es otra de nuestras pasiones. Black Moon Systems reúne proyectos y servicios digitales, desarrollo web y soporte tecnológico. ¿Buscas ayuda con una computadora o quieres conocer nuestros proyectos?"
-  },
-
-  gift: {
-    nombre: "Black Moon Gift",
-    respuesta: "🎁 Black Moon Gift forma parte de nuestro ecosistema de productos y experiencias. ¿Estás buscando algún regalo especial?"
-  },
-
-  studios: {
-    nombre: "Blackmoon Studios",
-    respuesta: "🎬 Blackmoon Studios es nuestra división de producción creativa y entretenimiento digital. Aquí desarrollamos podcasts, historias y proyectos audiovisuales. ¿Quieres conocer alguna producción?"
-  },
-
-  ecosistema: {
-    nombre: "Grupo BlackMoon",
-    respuesta: "Grupo BlackMoon es un ecosistema creativo que conecta tecnología, música, educación, entretenimiento, productos y aplicaciones. Nuestro lema es: Creatividad que trasciende. 🌑 ¿Qué división te gustaría explorar?"
-  }
-};
-
-// ===== RESPUESTAS SEGÚN EL TEMA =====
-function responderTema(tema) {
-  const informacion = conocimientoIsis[tema];
-
-  if (informacion) {
-    isisUltimoTema = tema;
-    return informacion.respuesta;
-  }
-
-  return "Cuéntame un poco más. Me interesa descubrir qué estás buscando dentro del universo BlackMoon. 🌙";
-}
-
-// ===== MOTOR DE CONVERSACIÓN =====
-function analizarMensaje(mensajeOriginal) {
-
-  const texto = normalizarTexto(mensajeOriginal);
-
-  // RECORDAR EL NOMBRE
-  const nombreMatch = mensajeOriginal.match(
-    /(?:me llamo|mi nombre es|soy)\s+([a-záéíóúñü][a-záéíóúñü\s'-]{0,35})/i
+  const movimientoReducido = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
   );
 
-  if (nombreMatch) {
-    isisNombre = nombreMatch[1].trim().split(/\s+/).slice(0, 2).join(" ");
+  if (!movimientoReducido.matches) {
+    window.addEventListener("mousemove", event => {
+      const rect = avatar.getBoundingClientRect();
 
-    return `¡Mucho gusto, ${isisNombre}! 💜 Ahora ya sé cómo llamarte. ¿Qué te gustaría descubrir hoy?`;
+      const centroX = rect.left + rect.width / 2;
+      const centroY = rect.top + rect.height / 2;
+
+      const deltaX = event.clientX - centroX;
+      const deltaY = event.clientY - centroY;
+
+      const moverX = Math.max(-8, Math.min(8, deltaX / 40));
+      const moverY = Math.max(-8, Math.min(8, deltaY / 40));
+
+      avatar.style.transform =
+        `translate(${moverX}px, ${moverY}px)`;
+    });
   }
 
-  // PREGUNTAS SOBRE SU NOMBRE
-  if (
-    contieneAlguna(texto, ["como me llamo", "recuerdas mi nombre", "sabes mi nombre"])
-  ) {
-    if (isisNombre) {
-      return `¡Claro que sí! Te llamas ${isisNombre}. No creas que me olvido tan fácilmente. 😉`;
-    }
-
-    return "Todavía no me has dicho tu nombre. ¿Cómo te llamas?";
-  }
-
-  // SALUDOS
-  if (
-    contieneAlguna(texto, ["hola", "buenas", "buen dia", "buenas tardes", "buenas noches", "hey", "que tal"])
-  ) {
-    return isisNombre
-      ? `¡Hola de nuevo, ${isisNombre}! 🌙 Qué gusto tenerte por aquí. ¿Qué hacemos hoy?`
-      : "¡Hola! 🌙 Qué gusto tenerte por aquí. ¿Cómo te llamas?";
-  }
-
-  // AGRADECIMIENTOS
-  if (contieneAlguna(texto, ["gracias", "te agradezco", "muy amable"])) {
-    return "¡No tienes que agradecer! 💜 Estoy aquí para ayudarte a descubrir todo lo que tiene preparado Grupo BlackMoon.";
-  }
-
-  // PREGUNTAS SOBRE ISIS
-  if (
-    contieneAlguna(texto, ["quien eres", "como te llamas", "eres una inteligencia", "eres una persona"])
-  ) {
-    return "Soy Isis Moon, la asistente virtual de Grupo BlackMoon. 🌙 No soy una persona ni una IA generativa: tengo una personalidad programada para conversar, orientar y compartir información sobre nuestro universo.";
-  }
-
-  // QUÉ PUEDE HACER
-  if (
-    contieneAlguna(texto, ["que puedes hacer", "para que sirves", "en que me ayudas", "que sabes hacer"])
-  ) {
-    return "¡Tengo varias funciones! ✨ Puedo orientarte sobre nuestra música, aplicaciones, podcasts, escuela aérea, productos, cómics y servicios digitales. También puedo conversar contigo y ayudarte a encontrar lo que buscas. ¿Por dónde empezamos?";
-  }
-
-  // PREGUNTAS SOBRE EL CREADOR
-  if (
-    contieneAlguna(texto, ["quien te creo", "quien es tu creador", "quien esta detras de blackmoon"])
-  ) {
-    return "Fui creada como parte del universo de Grupo BlackMoon, fundado por el ingeniero Carlos Lezama. 🌑 Mi misión es acompañar a los visitantes y mostrarles todo lo que sucede en este multiverso creativo.";
-  }
-
-  // PAREJA Y RELACIONES
-  if (
-    contieneAlguna(texto, ["novio", "novia", "pareja", "estas enamorada"])
-  ) {
-    return "¡Vaya, qué pregunta! 😉 Soy una asistente virtual, así que no tengo relaciones sentimentales. Pero sí tengo mucho cariño por el universo BlackMoon y por las personas que lo visitan.";
-  }
-
-  // ESTADO DE ÁNIMO
-  if (
-    contieneAlguna(texto, ["estoy triste", "me siento mal", "tuve un mal dia", "estoy deprimido", "estoy deprimida"])
-  ) {
-    return "Lamento que estés pasando por un momento difícil. 💜 A veces no necesitamos resolver todo de inmediato. Si quieres, puedes contarme qué ocurrió. Te leo.";
-  }
-
-  if (
-    contieneAlguna(texto, ["estoy feliz", "estoy contento", "estoy contenta", "buenas noticias"])
-  ) {
-    return "¡Eso me encanta! ✨ Las buenas noticias merecen celebrarse. Cuéntame, ¿qué sucedió?";
-  }
-
-  // PREGUNTAS DE SEGUIMIENTO
-  if (
-    contieneAlguna(texto, ["cuentame mas", "dime mas", "quiero saber mas", "continua", "y que mas", "explicame mas"])
-  ) {
-    if (isisUltimoTema) {
-      return responderTema(isisUltimoTema);
-    }
-
-    return "¡Por supuesto! Hay mucho que descubrir aquí. ¿Qué te interesa: música, tecnología, danza aérea o entretenimiento?";
-  }
-
-  // DETECTAR TEMAS
-  if (
-    contieneAlguna(texto, ["musica", "cancion", "album", "disco", "records", "regueton", "rock"])
-  ) {
-    return responderTema("musica");
-  }
-
-  if (
-    contieneAlguna(texto, ["escuela", "danza", "aerea", "telas", "aro aereo", "pole", "entrenamiento"])
-  ) {
-    return responderTema("escuela");
-  }
-
-  if (
-    contieneAlguna(texto, ["aplicacion", "aplicaciones", "app", "apps", "aerial logbook", "calendario", "black moon labs"])
-  ) {
-    return responderTema("aplicaciones");
-  }
-
-  if (
-    contieneAlguna(texto, ["podcast", "entrevista", "programa", "blackmoon studios"])
-  ) {
-    return responderTema("podcast");
-  }
-
-  if (
-    contieneAlguna(texto, ["producto", "productos", "magnesia", "breas", "calcetas", "shorts"])
-  ) {
-    return responderTema("productos");
-  }
-
-  if (
-    contieneAlguna(texto, ["comic", "comics", "historieta", "historias"])
-  ) {
-    return responderTema("comics");
-  }
-
-  if (
-    contieneAlguna(texto, ["moto", "motocicleta", "biker"])
-  ) {
-    return responderTema("biker");
-  }
-
-  if (
-    contieneAlguna(texto, ["computadora", "computadoras", "sistemas", "soporte", "reparacion", "programacion", "pagina web"])
-  ) {
-    return responderTema("systems");
-  }
-
-  if (
-    contieneAlguna(texto, ["regalo", "gift"])
-  ) {
-    return responderTema("gift");
-  }
-
-  if (
-    contieneAlguna(texto, ["estudio", "produccion", "audiovisual"])
-  ) {
-    return responderTema("studios");
-  }
-
-  if (
-    contieneAlguna(texto, ["blackmoon", "grupo black", "ecosistema", "divisiones"])
-  ) {
-    return responderTema("ecosistema");
-  }
-
-  // PREGUNTAS DE UBICACIÓN Y NAVEGACIÓN
-  if (
-    contieneAlguna(texto, ["donde encuentro", "donde esta", "como llego", "como puedo entrar"])
-  ) {
-    return "Puedes explorar las divisiones desde la sección Ecosistema de esta misma página. 🌙 Si me dices qué proyecto buscas, intentaré orientarte.";
-  }
-
-  // DESPEDIDAS
-  if (
-    contieneAlguna(texto, ["adios", "hasta luego", "nos vemos", "bye", "me voy"])
-  ) {
-    return isisNombre
-      ? `¡Hasta pronto, ${isisNombre}! 🌙 La luna siempre tendrá un lugar para ti en BlackMoon.`
-      : "¡Hasta pronto! 🌙 La luna seguirá iluminando tu camino. Regresa cuando quieras.";
-  }
-
-  // RESPUESTA CONTEXTUAL
-  if (isisUltimoTema) {
-    return "Interesante lo que me cuentas. 💜 ¿Quieres que sigamos hablando de " +
-      conocimientoIsis[isisUltimoTema].nombre +
-      " o prefieres explorar otra parte de BlackMoon?";
-  }
-
-  // RESPUESTA GENERAL
-  const respuestasGenerales = [
-    "¡Qué interesante! Cuéntame un poquito más para entenderte mejor. 🌙",
-    "Me gusta conversar contigo. ¿Puedes explicarme un poco más lo que buscas?",
-    "Creo que hay algo interesante detrás de lo que me dices. ¿Qué te gustaría descubrir?",
-    "Estoy aquí para orientarte. ¿Tiene que ver con tecnología, música, arte o danza aérea?",
-    "¡Cuéntame más! Este universo tiene muchas historias por descubrir. ✨",
-    "No quiero darte una respuesta equivocada. ¿Podrías explicarme un poquito más?"
-  ];
-
-  return respuestasGenerales[
-    Math.floor(Math.random() * respuestasGenerales.length)
-  ];
-}
-
-// ===== ENVIAR MENSAJE =====
-function enviarMensajeIsis() {
-
-  if (isisRespondiendo) return;
-
-  const textoUsuario = input.value.trim();
-
-  if (!textoUsuario) return;
-
-  agregarMensaje("Tú", textoUsuario, true);
-  input.value = "";
-
-  isisRespondiendo = true;
-  input.disabled = true;
-
-  mostrarEscribiendo();
-
-  const respuesta = analizarMensaje(textoUsuario);
-
-  // Pequeña pausa para que la conversación sea más natural
-  const tiempo = Math.min(1700, Math.max(600, respuesta.length * 13));
-
-  setTimeout(() => {
-
-    quitarEscribiendo();
-
-    agregarMensaje("Isis Moon", respuesta);
-
-    isisRespondiendo = false;
-    input.disabled = false;
-    input.focus();
-
-  }, tiempo);
-}
-
-// ===== DETECTAR ENTER =====
-input.addEventListener("keydown", function(e) {
-  if (e.key === "Enter" && !e.shiftKey) {
-    e.preventDefault();
-    enviarMensajeIsis();
-  }
-});
-
-// ===== ANIMACIÓN DE MIRADA =====
-window.addEventListener("mousemove", (e) => {
-
-  if (window.matchMedia("(max-width: 600px)").matches) return;
-
-  const rect = avatar.getBoundingClientRect();
-
-  const avatarX = rect.left + rect.width / 2;
-  const avatarY = rect.top + rect.height / 2;
-
-  const deltaX = e.clientX - avatarX;
-  const deltaY = e.clientY - avatarY;
-
-  const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
-
-  const maxTilt = 12;
-
-  const tiltX = Math.max(-maxTilt, Math.min(maxTilt, deltaX / 25));
-  const tiltY = Math.max(-maxTilt, Math.min(maxTilt, deltaY / 25));
-
-  avatar.style.transform =
-    `translate(${tiltX}px, ${tiltY}px) rotate(${angle * 0.03}deg)`;
-});
-
+})();
 </script>
 </body>
 </html>
